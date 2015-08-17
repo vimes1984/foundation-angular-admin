@@ -16,3 +16,16 @@ meteor  add vimes1984:foundation-angular-admin
 ```
 An example can be found here:
 https://github.com/vimes1984/foundation-admin-ui-example
+
+
+##Setup!
+You can replace templates in your app by doing the following:
+```html
+<template name="myadmin">
+  <h2>Test</h2>
+</template>
+```
+then in your Client side app somewhere:
+```javascript
+Template.myadmin.replaces("admin");
+```
