@@ -19,7 +19,7 @@ Package.onUse(function(api) {
   api.use('angularui:angular-ui-router@0.2.0', 'client');
   api.use('urigo:angular-ui-router@0.7.0', 'client');
   api.use('templating', 'client');
-  api.addFiles('client/templates/admin.ng.html', 'client');
+  api.addFiles('client/templates/admin.ng.html');
   api.addFiles('public/js/appinit.js', 'client');
   api.addFiles('public/js/routes.js', 'client');
   api.addFiles('public/js/controllers.js', 'client');

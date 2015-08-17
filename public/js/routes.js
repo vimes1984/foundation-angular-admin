@@ -6,8 +6,8 @@ angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$loca
     $stateProvider
     .state('admin', {
       url: '/admin',
-      //templateUrl: 'client/templates/admin.ng.html',
-      template: 'Admin view',
+      templateUrl: 'client/templates/admin.ng.html',
+      //template: '<h2>Admin view</h2>',
       controller: 'adminCtrl'
     });
 }]);
