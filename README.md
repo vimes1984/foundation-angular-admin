@@ -1,4 +1,5 @@
 #Admin Ui Zurb Foundation and Angular Routers
+:::::::::: DO  NOT USE STILL BEING BUILT::::::
 This is a admin UI built on foundation zurb, angular-meteor, and angular-ui-router
 
 ##Requirememts
@@ -13,3 +14,5 @@ and finially install this package:
 ```bash
 meteor  add vimes1984:foundation-angular-admin
 ```
+An example can be found here:
+https://github.com/vimes1984/foundation-admin-ui-example

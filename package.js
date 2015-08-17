@@ -1,7 +1,7 @@
 /*Global*/
 Package.describe({
   name: 'vimes1984:foundation-angular-admin',
-  version: '0.0.2',
+  version: '0.0.3',
   // Brief, one-line summary of the package.
   summary: 'Installs an admin ui using zurb',
   // URL to the Git repository containing the source code for this package.
@@ -21,7 +21,7 @@ Package.onUse(function(api) {
   api.addFiles('public/js/appinit.js', 'client');
   api.addFiles('public/js/routes.js', 'client');
   api.addFiles('public/js/controllers.js', 'client');
-  api.addFiles('client/index.html', 'client');
+  api.addFiles('client/templates/admin.ng.html', 'client');
 
 });
 
