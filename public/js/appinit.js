@@ -1,1 +1,1 @@
-angular.module('adminui', ['ui.router', 'angular-meteor']);
+angular.module('adminui', [ 'angular-meteor', 'ui.router']);
