@@ -10,6 +10,7 @@ meteor add  matthew:foundation5-sass
 meteor add  fortawesome:fontawesome
 meteor add  angularui:angular-ui-router
 meteor add urigo:angular-ui-router
+meteor add aldeed:template-extension
 ```
 and finially install this package:
 ```bash
@@ -20,6 +21,14 @@ https://github.com/vimes1984/foundation-admin-ui-example
 
 
 ##Setup!
+You need to first require adminui in your app like so
+
+```javascript
+
+angular.module('yetibox', ['angular-meteor', 'ui.router', 'adminui']);
+
+```
+
 You can replace templates in your app by doing the following:
 ```html
 <template name="myadmin">
