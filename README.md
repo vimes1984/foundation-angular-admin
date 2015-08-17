@@ -9,3 +9,7 @@ meteor add  fortawesome:fontawesome
 meteor add  angularui:angular-ui-router
 meteor add urigo:angular-ui-router
 ```
+and finially install this package:
+```bash
+meteor  add vimes1984:foundation-angular-admin
+```
