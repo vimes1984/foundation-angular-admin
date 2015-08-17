@@ -29,3 +29,4 @@ then in your Client side app somewhere:
 ```javascript
 Template.myadmin.replaces("admin");
 ```
+the default template can be found in partials/admin.html
