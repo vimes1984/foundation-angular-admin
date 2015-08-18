@@ -4,7 +4,7 @@ angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$loca
     $locationProvider.html5Mode(true);
 
     $stateProvider
-    .state('admin', {
+    .state('admin.root', {
       url: '/admin',
       templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admin.ng.html',
       controller: 'adminCtrl'
