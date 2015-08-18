@@ -1,1 +1,26 @@
-<meteor-include src="adminallusers"></meteor-include>
+<section class="main-section">
+  <!-- content goes here -->
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="text-center">All users..</h2>
+    </div>
+    <table class="usertable" role="grid">
+      <thead>
+        <tr>
+          <td>Username</td>
+          <td>Email</td>
+          <td>Verified</td>
+          <td>Edit</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="singleuser in users track by $index">
+          <td>{{singleuser.username}}</td>
+          <td>{{singleuser.emails[0].address}}</td>
+          <td>{{singleuser.emails[0].verified}}</td>
+          <td><a href="/admin/edituser/{{singleuser._id}}">Edit</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
