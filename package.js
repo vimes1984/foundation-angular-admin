@@ -1,7 +1,7 @@
 /*Global*/
 Package.describe({
   name: 'vimes1984:foundation-angular-admin',
-  version: '0.0.12',
+  version: '0.0.14',
   // Brief, one-line summary of the package.
   summary: 'Installs an admin ui using zurb',
   // URL to the Git repository containing the source code for this package.
@@ -14,6 +14,9 @@ Package.describe({
 Package.onUse(function(api) {
 
   api.versionsFrom('1.1.0.3');
+
+  api.use('matthew:foundation5-sass@1.0.0', 'client'); // Dependencies
+  api.use('fortawesome:fontawesome@4.4.0', 'client'); // Dependencies
   api.use('angular:angular@1.2.0', 'client'); // Dependencies
   api.use('aldeed:template-extension@3.4.3', 'client'); // Dependencies
   api.use('urigo:angular@0.9.3', 'client');

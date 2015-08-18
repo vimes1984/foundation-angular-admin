@@ -1,26 +1,21 @@
-#Admin Ui Zurb Foundation and Angular Routers
+# Admin Ui Zurb Foundation and Angular Routers
 :::::::::: DO  NOT USE STILL BEING BUILT::::::
 
 This is a admin UI built on foundation zurb, angular-meteor, and angular-ui-router
 
-##Requirememts
-```bash
-meteor add urigo:angular
-meteor add  matthew:foundation5-sass
-meteor add  fortawesome:fontawesome
-meteor add  angularui:angular-ui-router
-meteor add urigo:angular-ui-router
-meteor add aldeed:template-extension
-```
-and finially install this package:
-```bash
-meteor  add vimes1984:foundation-angular-admin
-```
-An example can be found here:
-https://github.com/vimes1984/foundation-admin-ui-example
+## Requirememts
+You need at the least a accounts package:
 
+```bash
+  meteor  add accounts-password
+```
 
-##Setup!
+To  install this package run:
+```bash
+  meteor  add vimes1984:foundation-angular-admin
+```
+
+### Setup!
 You need to first require adminui in your app like so
 
 ```javascript
@@ -29,6 +24,8 @@ angular.module('yetibox', ['angular-meteor', 'ui.router', 'adminui']);
 
 ```
 
+
+### Configuration
 You can replace templates in your app by doing the following:
 ```html
 <template name="myadmin">
@@ -40,6 +37,16 @@ then in your Client side app somewhere:
 Template.myadmin.replaces("admin");
 ```
 the default template can be found in partials/admin.html
+
+We are using http://docs.meteor.com/#/full/accounts_api so you will need to set up signin/up forms or use something like: https://atmospherejs.com/meteor/accounts-ui ...
+
+To you can place a link to the admin like so:
+
+```html
+  <a href="/admin">Admin</a>
+```
+
+### Adding additional routes
 
 We are defining our route as
 ```javascript
@@ -57,7 +64,7 @@ $stateProvider
 });
 
 ```
-so you can add pages in like so a user like so in your routes:
+so you can add sub admin pages like this in your routes.js file :
 
 ```javascript
 
@@ -68,3 +75,21 @@ so you can add pages in like so a user like so in your routes:
 });
 
 ```
+Then define a controller for your new view:
+
+```javascript
+
+  angular.module('APPNAME').controller('blogCtrl', ['$scope', function($scope){
+    //Define your controller here..
+
+  }]);
+
+```
+
+
+#### Example
+A fully functional basic example can be found here:
+
+https://github.com/vimes1984/foundation-admin-ui-example
+
+this includes basic templates on the front end with login forms and such...
