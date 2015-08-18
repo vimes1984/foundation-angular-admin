@@ -1,0 +1,18 @@
+<template name="adminmenumain">
+  <aside class="left-off-canvas-menu">
+
+    <ul class="off-canvas-list">
+      <li><a href="/admin/dashboard"><i class="fa fa-tachometer fa-3"></i>&nbsp; Dashboard</a></li>
+      <li class="has-submenu">
+        <a href="#"><i class="fa fa-users"></i> Users</a>
+          <ul class="left-submenu">
+            <li><label><h3 class="text-center"><i class="fa fa-users"></i> USERS</h3></label></li>
+            <li class="back"><a href="#">Back</a></li>
+            <li><a ng-href="/admin/addnewuser">Add new user</a></li>
+            <li><a ng-href="/admin/viewallusers">View all users</a></li>
+          </ul>
+      </li>
+      <li><a href="/">Back to site</a></li>
+    </ul>
+  </aside>
+</template>

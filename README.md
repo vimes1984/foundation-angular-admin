@@ -26,6 +26,7 @@ angular.module('yetibox', ['angular-meteor', 'ui.router', 'adminui']);
 
 
 ### Configuration
+
 You can replace templates in your app by doing the following:
 ```html
 <template name="myadmin">
@@ -34,16 +35,21 @@ You can replace templates in your app by doing the following:
 ```
 then in your Client side app somewhere:
 ```javascript
-Template.myadmin.replaces("admin");
+Template.myadmin.replaces("admindashboard");
 ```
 the default template can be found in partials/admin.html
+
+Templates in use:
+* admindashboard
+* adminmenumain
+
 
 We are using http://docs.meteor.com/#/full/accounts_api so you will need to set up signin/up forms or use something like: https://atmospherejs.com/meteor/accounts-ui ...
 
 To you can place a link to the admin like so:
 
 ```html
-  <a href="/admin">Admin</a>
+  <a href="/admin/dashboard">Admin</a>
 ```
 
 ### Adding additional routes
