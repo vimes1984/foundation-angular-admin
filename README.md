@@ -40,3 +40,28 @@ then in your Client side app somewhere:
 Template.myadmin.replaces("admin");
 ```
 the default template can be found in partials/admin.html
+
+We are defining our route as
+```javascript
+
+$stateProvider
+.state('admin.root', {
+  url: '/admin',
+  templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admin.ng.html',
+  controller: 'adminCtrl'
+});
+
+```
+so you can require a user like so in your routes:
+
+```javascript
+
+.state('admin', {
+    resolve: {
+          "currentUser": ["$meteor", function($meteor){
+            return $meteor.requireUser();
+          }]
+        }
+});
+
+```
