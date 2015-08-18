@@ -44,7 +44,7 @@ Package.onUse(function(api) {
 
     'partials/admin.html',
     'partials/adminmenumain.html',
-    //'partials/admindashboard.html',
+    'partials/admindashboard.html',
     //'partials/adminallusers.html',
 
 
