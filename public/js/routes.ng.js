@@ -7,6 +7,11 @@ angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$loca
     .state('admin', {
       url: '/admin',
       templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admin.ng.html',
-      controller: 'adminCtrl'
+      controller: 'adminCtrl',
+      resolve: {
+            "currentUser": ["$meteor", function($meteor){
+              return $meteor.requireUser();
+            }]
+          },
     });
 }]);

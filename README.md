@@ -45,23 +45,26 @@ We are defining our route as
 ```javascript
 
 $stateProvider
-.state('admin.root', {
+.state('admin', {
   url: '/admin',
   templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admin.ng.html',
-  controller: 'adminCtrl'
+  controller: 'adminCtrl',
+  resolve: {
+        "currentUser": ["$meteor", function($meteor){
+          return $meteor.requireUser();
+        }]
+      },
 });
 
 ```
-so you can require a user like so in your routes:
+so you can add pages in like so a user like so in your routes:
 
 ```javascript
 
-.state('admin', {
-    resolve: {
-          "currentUser": ["$meteor", function($meteor){
-            return $meteor.requireUser();
-          }]
-        }
+.state('admin.blog', {
+  url: '/blog',
+  templateUrl: 'path/to/template/blog.ng.html',
+  controller: 'blogCtrl',
 });
 
 ```
