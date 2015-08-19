@@ -1,7 +1,11 @@
 # Admin Ui Zurb Foundation and Angular Routers
 :::::::::: DO  NOT USE STILL BEING BUILT::::::
-
 This is a admin UI built on foundation zurb, angular-meteor, and angular-ui-router
+
+
+## management
+Bugs issues and the such to be tracked via gitub:
+https://github.com/vimes1984/foundation-angular-admin
 
 ## Requirememts
 You need at the least a accounts package:
