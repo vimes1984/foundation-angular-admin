@@ -1,5 +1,4 @@
 user = Meteor.user();
-console.log(user);
 if (Roles.userIsInRole(user, 'super-admin')) {
 
 
@@ -39,6 +38,11 @@ if (Roles.userIsInRole(user, 'super-admin')) {
         url: '/addnewuser',
         templateUrl: 'vimes1984_foundation-angular-admin_client/templates/adminnewuser.ng.html',
         controller: 'AdminAddNewUserCtrl'
+      })
+      .state('admin.addnewpage', {
+        url: '/addnewpage',
+        templateUrl: 'vimes1984_foundation-angular-admin_client/templates/addnewpage.ng.html',
+        controller: 'AdminAddNewPageCtrl'
       });
   }]);
 }

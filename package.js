@@ -26,6 +26,7 @@ Package.onUse(function(api) {
     'aldeed:collection2@2.3.3',
     'aldeed:autoform@4.0.0 || 5.0.0',
     'alanning:roles@1.2.13',
+    'donchess:autoform-froala@0.0.2',
     'templating',
 
   ], 'client');
@@ -34,6 +35,7 @@ Package.onUse(function(api) {
   api.use([
 
     'aldeed:collection2@2.3.3',
+    'donchess:autoform-froala@0.0.2',
     'alanning:roles@1.2.13',
 
   ], 'server');
@@ -58,6 +60,7 @@ Package.onUse(function(api) {
       'client/templates/adminallusers.ng.html',
       'client/templates/adminedituser.ng.html',
       'client/templates/adminnewuser.ng.html',
+      'client/templates/addnewpage.ng.html'
 
     ], 'client');
   api.addFiles([
@@ -65,6 +68,7 @@ Package.onUse(function(api) {
     'partials/admin.html',
     'partials/adminmenumain.html',
     'partials/admindashboard.html',
+    'partials/addpage.html',
     //'partials/adminallusers.html',
 
 
@@ -80,6 +84,7 @@ Package.onUse(function(api) {
     'public/js/controllers/users/adminedituser.ng.js',
     'public/js/controllers/users/userviewall.ng.js',
     'public/js/controllers/users/adminaddnewuserCtrl.ng.js',
+    'public/js/controllers/pages/AdminAddNewPageCtrl.ng.js',
 
   ], 'client');
   //exports

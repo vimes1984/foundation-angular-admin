@@ -3,7 +3,6 @@ angular.module('adminui').controller('AdminAddNewUserCtrl', ['$scope', '$statePa
   function($scope, $stateParams, $meteor, $state){
 
   $scope.roles = Roles.getAllRoles().fetch();
-  $scope.pages = $meteor.collection(Pages, false).subscribe('pages');
 
   console.log($scope.roles)
   $scope.register = function(){
@@ -26,27 +25,6 @@ angular.module('adminui').controller('AdminAddNewUserCtrl', ['$scope', '$statePa
 
     });
 
-    /*
-    $meteor.createUser({
-          username:    $scope.newuser.username,
-          email:       $scope.newuser.email,
-          password:    $scope.newuser.password,
-          profile: {
-            name:       $scope.newuser.name,
-            additional: $scope.newuser.additional,
-            blockly: []
-          },
-        }).then(function(){
-          $scope.showalert    = true;
-          $scope.alertclass   = 'alert';
-          $scope.message      = 'User regsitered';
-      }, function(err){
-        $scope.showalert    = true;
-        $scope.alertclass   = 'success';
-        $scope.message      = err.reason;
-
-      });
-      */
     };
 
 }]);

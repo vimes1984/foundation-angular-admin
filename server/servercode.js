@@ -92,9 +92,7 @@ Schema.User = new SimpleSchema({
 Meteor.users.attachSchema(Schema.User);
 Meteor.publish("users", function () {
   var loggedInUser = Meteor.user();
-  if (!loggedInUser ||
-      !Roles.userIsInRole(loggedInUser,
-                          ['super-admin'], group)) {
+  if (!loggedInUser || !Roles.userIsInRole(loggedInUser, 'super-admin')) {
     throw new Meteor.Error(403, "Access denied")
   }else{
 
@@ -103,12 +101,11 @@ Meteor.publish("users", function () {
 
 });
 
+
 Meteor.publish("pages", function () {
 
   var loggedInUser = Meteor.user();
-  if (!loggedInUser ||
-      !Roles.userIsInRole(loggedInUser,
-                          ['super-admin'], group)) {
+  if (!loggedInUser || !Roles.userIsInRole(loggedInUser, 'super-admin')) {
     throw new Meteor.Error(403, "Access denied")
   }else{
 
@@ -136,10 +133,19 @@ Meteor.publish('roles', function (){
 
 //Methods
 Meteor.methods({
+  /**
+   * Adds  a user to a specific Role
+   *
+   * @method addUser
+   * @param {object}
+   *
+   */
   addUser: function (userboject) {
-     // Make sure the user is logged in before inserting a task
-     if (! Meteor.userId()) {
-       throw new Meteor.Error("not-authorized");
+     // Make sure the user is superadmin before allowing them to set roles
+     var loggedInUser = Meteor.user()
+
+     if (!loggedInUser ||!Roles.userIsInRole(loggedInUser,  'super-admin')) {
+       throw new Meteor.Error(403, "Access denied")
      }
      console.log(userboject);
      var newuser = Accounts.createUser({
@@ -156,10 +162,8 @@ Meteor.methods({
     Roles.setUserRoles(newuser, userboject.role.name);
     console.log(userboject);
     return newuser;
-   }
-});
+  },
 
-Meteor.methods({
   /**
    * delete a user from a specific group
    *
@@ -170,15 +174,13 @@ Meteor.methods({
   deleteUser: function (targetUserId, group) {
     var loggedInUser = Meteor.user()
 
-    if (!loggedInUser ||
-        !Roles.userIsInRole(loggedInUser,
-                            ['super-admin'], group)) {
+    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, 'super-admin')) {
       throw new Meteor.Error(403, "Access denied")
     }
 
-    // remove permissions for target group
-    Roles.setUserRoles(targetUserId, [], group)
+    // remove permissions for target up
+    Roles.setUserRoles(targetUserId, [])
 
     // do other actions required when a user is removed...
-  }
-})
+  },
+});

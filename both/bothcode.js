@@ -1,30 +1,28 @@
+//Page Schema
 Pages = new Mongo.Collection("pages");
-//Test book Schema
+
 var Schemas = {};
 
-Schemas.Book = new SimpleSchema({
+Schemas.Page = new SimpleSchema({
     title: {
         type: String,
         label: "Title",
         max: 200
     },
-    author: {
+    content: {
         type: String,
-        label: "Author"
+        label: "Page content",
+        autoform: {
+          afFieldInput: {
+            type: 'froala',
+            inlineMode: false
+            // froala options goes here
+          }
+        }
     },
-    copies: {
-        type: Number,
-        label: "Number of copies",
-        min: 0
-    },
-    lastCheckedOut: {
-        type: Date,
-        label: "Last date this book was checked out",
-        optional: true
-    },
-    summary: {
+    pageurl: {
         type: String,
-        label: "Brief summary",
+        label: "Page url",
         optional: true,
         max: 1000
     }
