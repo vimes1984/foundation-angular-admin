@@ -10,6 +10,10 @@
       <input type="text"       ng-model="newuser.additional"  placeholder="Additional Info" value=""/>
       <input type="email"      ng-model="newuser.email"       placeholder="Email" value=""/>
       <input type="password"   ng-model="newuser.password"    placeholder="Password" value=""/>
+      <label for="Role">
+        Pick users role:
+        <select class="" ng-required ng-options="role.name for role in roles" ng-model="newuser.role" data-customforms="disabled"></select>
+      </label>
       <button class="button expand" ng-click="register()">Register Now</button>
     </form>
     <div data-alert class="alert-box" ng-class="alertclass" ng-show="showalert">

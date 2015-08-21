@@ -77,7 +77,6 @@ Package.onUse(function(api) {
   api.addFiles([
 
     'public/js/controllers/main.ng.js',
-    'public/js/controllers/users/useraddnew.ng.js',
     'public/js/controllers/users/adminedituser.ng.js',
     'public/js/controllers/users/userviewall.ng.js',
     'public/js/controllers/users/adminaddnewuserCtrl.ng.js',

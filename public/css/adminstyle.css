@@ -2,3 +2,8 @@
 .usertable{
   width: 100%;
 }
+select[multiple].adminmultiple,
+select[size].adminmultiple {
+  height: auto;
+  background-image: none;
+}

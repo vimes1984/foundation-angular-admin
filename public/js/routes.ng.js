@@ -1,8 +1,7 @@
 user = Meteor.user();
+console.log(user);
 if (Roles.userIsInRole(user, 'super-admin')) {
 
-  // True!  Even though Joe doesn't manage Real Madrid, he is 'super-admin' in
-  // the Global Group so this check succeeds.
 
   angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$locationProvider',
     function($urlRouterProvider, $stateProvider, $locationProvider){
