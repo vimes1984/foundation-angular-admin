@@ -14,15 +14,35 @@ Package.describe({
 Package.onUse(function(api) {
 
   api.versionsFrom('1.1.0.3');
+  //client dependencies
+  api.use([
+    'matthew:foundation5-sass@1.0.0',
+    'fortawesome:fontawesome@4.4.0',
+    'angular:angular@1.2.0',
+    'urigo:angular@0.9.3',
+    'aldeed:template-extension@3.4.3',
+    'angularui:angular-ui-router@0.2.0',
+    'urigo:angular-ui-router@0.7.0',
+    'aldeed:collection2@2.3.3',
+    'aldeed:autoform@4.0.0 || 5.0.0',
+    'alanning:roles@1.2.13',
+    'templating',
 
-  api.use('matthew:foundation5-sass@1.0.0', 'client'); // Dependencies
-  api.use('fortawesome:fontawesome@4.4.0', 'client'); // Dependencies
-  api.use('angular:angular@1.2.0', 'client'); // Dependencies
-  api.use('aldeed:template-extension@3.4.3', 'client'); // Dependencies
-  api.use('urigo:angular@0.9.3', 'client');
-  api.use('angularui:angular-ui-router@0.2.0', 'client');
-  api.use('urigo:angular-ui-router@0.7.0', 'client');
-  api.use('templating', 'client');
+  ], 'client');
+
+  //Server dependencies
+  api.use([
+
+    'aldeed:collection2@2.3.3',
+    'alanning:roles@1.2.13',
+
+  ], 'server');
+  //Generic dependecies
+  api.addFiles([
+
+    'both/bothcode.js',
+
+  ]);
   //server
   api.addFiles([
 
@@ -37,7 +57,7 @@ Package.onUse(function(api) {
       'client/templates/admindashboard.ng.html',
       'client/templates/adminallusers.ng.html',
       'client/templates/adminedituser.ng.html',
-
+      'client/templates/adminnewuser.ng.html',
 
     ], 'client');
   api.addFiles([
@@ -60,9 +80,14 @@ Package.onUse(function(api) {
     'public/js/controllers/users/useraddnew.ng.js',
     'public/js/controllers/users/adminedituser.ng.js',
     'public/js/controllers/users/userviewall.ng.js',
+    'public/js/controllers/users/adminaddnewuserCtrl.ng.js',
 
   ], 'client');
-
+  //exports
+  api.export([
+    'Roles',
+    'Pages',
+    ],['client']);
 });
 
 Package.onTest(function(api) {

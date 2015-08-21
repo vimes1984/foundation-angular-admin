@@ -8,7 +8,7 @@ angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$loca
     .state('admin', {
       url: '/admin',
       templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admin.ng.html',
-      controller: 'mainCtrl',
+      controller: 'MainCtrl',
       resolve: {
             "currentUser": ["$meteor", function($meteor){
               return $meteor.requireUser();
@@ -18,16 +18,21 @@ angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$loca
     .state('admin.dashboard', {
       url: '/dashboard',
       templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admindashboard.ng.html',
-      controller: 'mainCtrl'
+      controller: 'MainCtrl'
     })
     .state('admin.viewallusers', {
       url: '/viewallusers',
       templateUrl: 'vimes1984_foundation-angular-admin_client/templates/adminallusers.ng.html',
-      controller: 'userviewallCtrl'
+      controller: 'UserViewAllCtrl'
     })
     .state('admin.editusers', {
       url: '/edituser/:userID',
       templateUrl: 'vimes1984_foundation-angular-admin_client/templates/adminedituser.ng.html',
-      controller: 'adminedituserCtrl'
+      controller: 'AdminEditUserCtrl'
+    })
+    .state('admin.addnewuser', {
+      url: '/addnewuser',
+      templateUrl: 'vimes1984_foundation-angular-admin_client/templates/adminnewuser.ng.html',
+      controller: 'AdminAddNewUserCtrl'
     });
 }]);

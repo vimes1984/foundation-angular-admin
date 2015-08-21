@@ -1,0 +1,20 @@
+<section class="main-section">
+  <!-- content goes here -->
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="text-center">New users</h2>
+    </div>
+    <form>
+      <input type="text"       ng-model="newuser.username"    placeholder="Username" value=""/>
+      <input type="text"       ng-model="newuser.name"        placeholder="Name" value=""/>
+      <input type="text"       ng-model="newuser.additional"  placeholder="Additional Info" value=""/>
+      <input type="email"      ng-model="newuser.email"       placeholder="Email" value=""/>
+      <input type="password"   ng-model="newuser.password"    placeholder="Password" value=""/>
+      <button class="button expand" ng-click="register()">Register Now</button>
+    </form>
+    <div data-alert class="alert-box" ng-class="alertclass" ng-show="showalert">
+      <p>{{message}}</p>
+      <a href="#" class="close">&times;</a>
+    </div>
+  </div>
+</section>

@@ -2,7 +2,15 @@
 :::::::::: DO  NOT USE STILL BEING BUILT::::::
 This is a admin UI built on foundation zurb, angular-meteor, and angular-ui-router
 
+##ROLES
+We depend on Alanning's Roles package:
+https://github.com/alanning/meteor-roles/
+So before your able to see the admin routes you HAVE to add yoru user to the super-admin group, in your client side app somewhere install roles and run this:
 
+```javascript
+  user = Meteor.user();
+  Roles.addUsersToRoles(user, ['admin','staff']);
+```
 ## management
 Bugs issues and the such to be tracked via gitub:
 https://github.com/vimes1984/foundation-angular-admin
