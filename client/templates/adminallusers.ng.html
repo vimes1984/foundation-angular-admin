@@ -10,6 +10,7 @@
           <td>Username</td>
           <td>Email</td>
           <td>Verified</td>
+          <td>Role/s</td>
           <td>Edit</td>
         </tr>
       </thead>
@@ -18,6 +19,7 @@
           <td>{{singleuser.username}}</td>
           <td>{{singleuser.emails[0].address}}</td>
           <td>{{singleuser.emails[0].verified}}</td>
+          <td><span ng-repeat="role in singleuser.roles">{{role}} | </span> </td>
           <td><a href="/admin/edituser/{{singleuser._id}}">Edit</a></td>
         </tr>
       </tbody>
