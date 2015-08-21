@@ -91,11 +91,31 @@ Schema.User = new SimpleSchema({
 });
 Meteor.users.attachSchema(Schema.User);
 Meteor.publish("users", function () {
-  return Meteor.users.find({}, {});
+  var loggedInUser = Meteor.user();
+  if (!loggedInUser ||
+      !Roles.userIsInRole(loggedInUser,
+                          ['super-admin'], group)) {
+    throw new Meteor.Error(403, "Access denied")
+  }else{
+
+    return Meteor.users.find({}, {});
+  }
+
 });
 
 Meteor.publish("pages", function () {
-  return Pages.find();
+
+  var loggedInUser = Meteor.user();
+  if (!loggedInUser ||
+      !Roles.userIsInRole(loggedInUser,
+                          ['super-admin'], group)) {
+    throw new Meteor.Error(403, "Access denied")
+  }else{
+
+    return Pages.find();
+
+  }
+
 });
 
 /******* ROLES **********/
