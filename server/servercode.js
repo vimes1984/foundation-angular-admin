@@ -99,11 +99,15 @@ Meteor.publish("pages", function () {
 });
 
 /******* ROLES **********/
+//Super adim users
+var editorUsers = [
+  {_id: ''},
+];
+Roles.addUsersToRoles(
+  editorUsers,
+  ['editor']
+);
 
-
-Roles.createRole('super-admin');
-Roles.createRole('editor');
-Roles.createRole('subscriber');
 
 Meteor.publish('roles', function (){
   return Meteor.roles.find({})
