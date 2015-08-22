@@ -120,9 +120,8 @@ Schemas.User = new SimpleSchema({
     // If you are sure you will never need to use role groups, then
     // you can specify [String] as the type
     roles: {
-        type: Object,
+        type: [String],
         optional: true,
-        blackbox: true,
         label: "Pick Roles",
         autoform: {
           options: function () {

@@ -1,8 +1,7 @@
 /******* P{ublish's **********/
 
 Meteor.publish("users", function () {
-  var loggedInUser = Meteor.user();
-  if (!loggedInUser || !Roles.userIsInRole(loggedInUser, 'super-admin')) {
+  if (!this || !Roles.userIsInRole(this.userId, 'super-admin')) {
     throw new Meteor.Error(403, "Access denied")
   }else{
 
@@ -14,8 +13,7 @@ Meteor.publish("users", function () {
 
 Meteor.publish("pages", function () {
 
-  var loggedInUser = Meteor.user();
-  if (!loggedInUser || !Roles.userIsInRole(loggedInUser, 'super-admin')) {
+  if (!this || !Roles.userIsInRole(this.userId, 'super-admin')) {
     throw new Meteor.Error(403, "Access denied")
   }else{
 
@@ -27,10 +25,17 @@ Meteor.publish("pages", function () {
 
 /******* ROLES **********/
 //Super adim users
+var editorUsers = [
+  {_id: ''},
+];
+Roles.addUsersToRoles(
+  editorUsers,
+  ['editor']
+);
+
 
 Meteor.publish('roles', function (){
-  var loggedInUser = Meteor.user();
-  if (!loggedInUser || !Roles.userIsInRole(loggedInUser, 'super-admin')) {
+  if (!this || !Roles.userIsInRole(this.userId, 'super-admin')) {
     throw new Meteor.Error(403, "Access denied")
   }else{
 
