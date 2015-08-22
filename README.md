@@ -139,6 +139,7 @@ angular.module('myApp').config([
   }
 ]);
 ```
+
 You can replace templates in your app by doing the following:
 ```html
 <template name="myadmin">
@@ -160,6 +161,7 @@ Templates in use:
 * edituser
 * pagescollection ( you will probably need to edit this to adapt to your own personal template)
 * pagesingle ( and this one aswell to match your own front end layoput...)
+
 We are using http://docs.meteor.com/#/full/accounts_api so you will need to set up signin/up forms or use something like: https://atmospherejs.com/meteor/accounts-ui ...
 
 To you can place a link to the admin like so:
