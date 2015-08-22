@@ -1,5 +1,5 @@
+# :::::::::: DO  NOT USE STILL BEING BUILT::::::
 # Admin Ui Zurb Foundation and Angular Routers
-:::::::::: DO  NOT USE STILL BEING BUILT::::::
 This is a admin UI built on foundation zurb, angular-meteor, and angular-ui-router
 
 ##ROLES
@@ -68,6 +68,7 @@ Meteor.users.attachSchema(Schemas.User);
 ### Or to the pages object like so:
 
 ```javascript
+
 var Schemas = {};
 
 Schemas.Page = new SimpleSchema({
@@ -79,7 +80,9 @@ Schemas.Page = new SimpleSchema({
 });
 
 Pages.attachSchema(Schemas.Page);
+
 ```
+
 ## management
 Bugs issues and the such to be tracked via gitub:
 https://github.com/vimes1984/foundation-angular-admin
