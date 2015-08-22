@@ -1,4 +1,4 @@
-# :::::::::: DO  NOT USE STILL BEING BUILT::::::
+# :: DO  NOT USE STILL BEING BUILT ::
 # Admin Ui Zurb Foundation and Angular Routers
 This is a admin UI built on foundation zurb, angular-meteor, and angular-ui-router
 ## Requirememts
