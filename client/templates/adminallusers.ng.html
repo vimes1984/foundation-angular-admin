@@ -16,11 +16,11 @@
       </thead>
       <tbody>
         <tr ng-repeat="singleuser in users track by $index">
-          <td>{{singleuser.username}}</td>
-          <td>{{singleuser.emails[0].address}}</td>
-          <td>{{singleuser.emails[0].verified}}</td>
-          <td><span ng-repeat="role in singleuser.roles">{{role}} | </span> </td>
-          <td><a href="/admin/edituser/{{singleuser._id}}">Edit</a></td>
+          <td>[[singleuser.username]]</td>
+          <td>[[singleuser.emails[0].address]]</td>
+          <td>[[singleuser.emails[0].verified]]</td>
+          <td><span ng-repeat="role in singleuser.roles">[[role]] | </span> </td>
+          <td><a href="/admin/edituser/[[singleuser._id]]">Edit</a></td>
         </tr>
       </tbody>
     </table>

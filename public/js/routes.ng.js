@@ -56,3 +56,21 @@ if (Roles.userIsInRole(user, 'super-admin')) {
       });
   }]);
 }
+
+
+  angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$locationProvider',
+    function($urlRouterProvider, $stateProvider, $locationProvider){
+
+
+      $locationProvider.html5Mode(true);
+
+      $stateProvider
+      .state('pages', {
+        url: '/pages',
+        templateUrl: 'vimes1984_foundation-angular-admin_client/templates/frontend/viewpages.ng.html',
+      })
+      .state('pages.single', {
+        url: '/:pageurl',
+        templateUrl: 'vimes1984_foundation-angular-admin_client/templates/frontend/viewpagesingle.ng.html',
+      });
+  }]);

@@ -17,6 +17,14 @@ and the collection2 package
 ```bash
 meteor add aldeed:collection2
 ```
+and of course the angular-meteor and angular-ui packages  if you want to use the sam app structure in your front end stuff or extend the admin ui:
+```bash
+
+meteor add urigo:angular
+meteor add angularui:angular-ui-router
+meteor add urigo:angular-ui-router
+
+```
 
 To  install this package run:
 ```bash
@@ -25,7 +33,7 @@ To  install this package run:
 
 
 ### Setup!
-You need to first require adminui in your app like so
+You need to first require adminui in your angular app like so
 
 ```javascript
 
@@ -120,7 +128,17 @@ https://github.com/vimes1984/foundation-angular-admin
 
 
 ### Configuration
+Angular has been configured to use [[ ]] instead of {{ }} you'd be best of to do the same on the frontend:
+```javascript
 
+angular.module('myApp').config([
+  '$interpolateProvider',
+  function ($interpolateProvider) {
+    $interpolateProvider.startSymbol('[[');
+    $interpolateProvider.endSymbol(']]');
+  }
+]);
+```
 You can replace templates in your app by doing the following:
 ```html
 <template name="myadmin">
@@ -140,8 +158,8 @@ Templates in use:
 * admin
 * editpage
 * edituser
-
-
+* pagescollection ( you will probably need to edit this to adapt to your own personal template)
+* pagesingle ( and this one aswell to match your own front end layoput...)
 We are using http://docs.meteor.com/#/full/accounts_api so you will need to set up signin/up forms or use something like: https://atmospherejs.com/meteor/accounts-ui ...
 
 To you can place a link to the admin like so:

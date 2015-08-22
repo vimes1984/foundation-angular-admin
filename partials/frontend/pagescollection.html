@@ -1,0 +1,13 @@
+<template name="pagescollection">
+  {{> topbar}}
+  <div ng-controller="ClientViewPageCtrl" class="row">
+    <div class="large-12 columns">
+      <h2> All pages!</h2>
+      <div class="panel" ng-repeat="page in pages">
+        <h2>[[page.title]]</h2>
+        <a href="/pages/[[page.pageurl]]">Read more</a>
+      </div>
+    </div>
+  </div>
+  {{> footer}}
+</template>

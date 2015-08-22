@@ -69,6 +69,9 @@ Package.onUse(function(api) {
       'client/templates/addnewpage.ng.html',
       'client/templates/viewallpages.ng.html',
       'client/templates/admineditpage.ng.html',
+      //frontend
+      'client/templates/frontend/viewpages.ng.html',
+      'client/templates/frontend/viewpagesingle.ng.html',
 
     ], 'client');
   api.addFiles([
@@ -79,6 +82,9 @@ Package.onUse(function(api) {
     'partials/addpage.html',
     'partials/editpage.html',
     'partials/edituser.html',
+    'partials/frontend/pagescollection.html',
+    'partials/frontend/pagesingle.html',
+
     //'partials/adminallusers.html',
 
 
@@ -99,6 +105,9 @@ Package.onUse(function(api) {
     'public/js/controllers/pages/AdminAddNewPageCtrl.ng.js',
     'public/js/controllers/pages/AdminViewAllPagesCtrl.ng.js',
     'public/js/controllers/pages/AdminEditPageCtrl.ng.js',
+    //frontend
+    'public/js/controllers/frontend/ClientViewPageCtrl.ng.js',
+    'public/js/controllers/frontend/ClientViewSinglePageCtrl.ng.js',
 
   ], 'client');
   //exports

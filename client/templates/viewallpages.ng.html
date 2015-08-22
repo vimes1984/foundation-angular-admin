@@ -14,9 +14,9 @@
       </thead>
       <tbody>
         <tr ng-repeat="singlepage in pages track by $index">
-          <td>{{singlepage.title}}</td>
-          <td>{{singlepage.pageurl}}</td>
-          <td><a href="/admin/editpage/{{singlepage._id}}">Edit</a></td>
+          <td>[[singlepage.title]]</td>
+          <td>/pages/[[singlepage.pageurl]]</td>
+          <td><a href="/admin/editpage/[[singlepage._id]]">Edit</a></td>
         </tr>
       </tbody>
     </table>

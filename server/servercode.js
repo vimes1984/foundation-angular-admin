@@ -13,13 +13,7 @@ Meteor.publish("users", function () {
 
 Meteor.publish("pages", function () {
 
-  if (!this || !Roles.userIsInRole(this.userId, 'super-admin')) {
-    throw new Meteor.Error(403, "Access denied")
-  }else{
-
     return Pages.find();
-
-  }
 
 });
 
