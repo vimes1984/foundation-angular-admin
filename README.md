@@ -7,9 +7,15 @@ You need at the least an accounts package:
 ```bash
   meteor  add accounts-password
 ```
+
 and the roles package:
 ```bash
   meteor add alanning:roles
+```
+
+and the collection2 package
+```bash
+meteor add aldeed:collection2
 ```
 
 To  install this package run:

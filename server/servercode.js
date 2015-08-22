@@ -27,14 +27,6 @@ Meteor.publish("pages", function () {
 
 /******* ROLES **********/
 //Super adim users
-var editorUsers = [
-  {_id: ''},
-];
-Roles.addUsersToRoles(
-  editorUsers,
-  ['editor']
-);
-
 
 Meteor.publish('roles', function (){
   var loggedInUser = Meteor.user();

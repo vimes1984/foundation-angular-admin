@@ -24,6 +24,8 @@ Package.onUse(function(api) {
     'angularui:angular-ui-router@0.2.0',
     'urigo:angular-ui-router@0.7.0',
     'aldeed:collection2@2.3.3',
+    'aldeed:simple-schema@1.0.3',
+    'aldeed:simple-schema@1.0.3',
     'aldeed:autoform@4.0.0 || 5.0.0',
     'alanning:roles@1.2.13',
     'donchess:autoform-froala@0.0.2',
