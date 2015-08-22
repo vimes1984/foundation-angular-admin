@@ -1,11 +1,35 @@
 # :::::::::: DO  NOT USE STILL BEING BUILT::::::
 # Admin Ui Zurb Foundation and Angular Routers
 This is a admin UI built on foundation zurb, angular-meteor, and angular-ui-router
+## Requirememts
+You need at the least a accounts package:
 
+```bash
+  meteor  add accounts-password
+```
+and the roles package:
+```bash
+  meteor add alanning:roles
+```
+
+To  install this package run:
+```bash
+  meteor  add vimes1984:foundation-angular-admin
+```
+
+
+### Setup!
+You need to first require adminui in your app like so
+
+```javascript
+
+angular.module('yetibox', ['angular-meteor', 'ui.router', 'adminui']);
+
+```
 ##ROLES
 We depend on Alanning's Roles package:
 https://github.com/alanning/meteor-roles/
-and so will yoru app need to so go ahead and install that first:
+and so will your app need to so go ahead and install that first:
 
 ```bash
   meteor add alanning:roles
@@ -87,26 +111,6 @@ Pages.attachSchema(Schemas.Page);
 Bugs issues and the such to be tracked via gitub:
 https://github.com/vimes1984/foundation-angular-admin
 
-## Requirememts
-You need at the least a accounts package:
-
-```bash
-  meteor  add accounts-password
-```
-
-To  install this package run:
-```bash
-  meteor  add vimes1984:foundation-angular-admin
-```
-
-### Setup!
-You need to first require adminui in your app like so
-
-```javascript
-
-angular.module('yetibox', ['angular-meteor', 'ui.router', 'adminui']);
-
-```
 
 
 ### Configuration
@@ -121,11 +125,15 @@ then in your Client side app somewhere:
 ```javascript
 Template.myadmin.replaces("admindashboard");
 ```
-the default template can be found in partials/admin.html
+the default templates can be found in partials/
 
 Templates in use:
 * admindashboard
 * adminmenumain
+* addpage
+* admin
+* editpage
+* edituser
 
 
 We are using http://docs.meteor.com/#/full/accounts_api so you will need to set up signin/up forms or use something like: https://atmospherejs.com/meteor/accounts-ui ...

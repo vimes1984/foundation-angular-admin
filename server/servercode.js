@@ -37,7 +37,16 @@ Roles.addUsersToRoles(
 
 
 Meteor.publish('roles', function (){
-  return Meteor.roles.find({})
+  var loggedInUser = Meteor.user();
+  if (!loggedInUser || !Roles.userIsInRole(loggedInUser, 'super-admin')) {
+    throw new Meteor.Error(403, "Access denied")
+  }else{
+
+    return Meteor.roles.find({})
+
+  }
+
+
 });
 /******* Methods **********/
 

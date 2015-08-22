@@ -1,7 +1,9 @@
 //Help page controller
 angular.module('adminui').controller('AdminEditUserCtrl', ['$scope', '$stateParams', function($scope, $stateParams){
 
-        $scope.singleuser = Meteor.users.find({_id: $stateParams.userID }).fetch();
+        $scope.singleuser = Meteor.users.find({_id: $stateParams.userID }).fetch()[0];
+
+        console.log($scope.singleuser);
 
          Template.edituser.helpers({
            UpdateUserSingle: function() {
@@ -11,7 +13,7 @@ angular.module('adminui').controller('AdminEditUserCtrl', ['$scope', '$statePara
 
           var hooksObject = {
               onSuccess: function(formType, result) {
-                $scope.singleuser = Meteor.users.find({_id: $stateParams.userID }).fetch();
+                $scope.singleuser = Meteor.users.find({_id: $stateParams.userID }).fetch()[0];
                 $scope.$apply();
               }
           };

@@ -59,10 +59,6 @@ Schemas.UserProfile = new SimpleSchema({
         regEx: /^[a-zA-Z]{2,25}$/,
         optional: true
     },
-    birthday: {
-        type: Date,
-        optional: true
-    },
     organization : {
         type: String,
         regEx: /^[a-z0-9A-z .]{3,30}$/,
@@ -75,7 +71,15 @@ Schemas.UserProfile = new SimpleSchema({
     },
     bio: {
         type: String,
-        optional: true
+        optional: true,
+        autoform: {
+          afFieldInput: {
+            type: 'froala',
+            inlineMode: false,
+            height: 300,
+            // froala options goes here
+          }
+        }
     },
 
     country: {
@@ -102,24 +106,27 @@ Schemas.User = new SimpleSchema({
     "emails.$.verified": {
         type: Boolean
     },
-    createdAt: {
-        type: Date
-    },
     profile: {
         type: Schemas.UserProfile,
         optional: true
-    },
-    services: {
-        type: Object,
-        optional: true,
-        blackbox: true
     },
     // Option 2: [String] type
     // If you are sure you will never need to use role groups, then
     // you can specify [String] as the type
     roles: {
         type: [String],
-        optional: true
+        optional: true,
+        label: "Pick Roles",
+        autoform: {
+          options: function () {
+            var roles = Roles.getAllRoles().fetch();
+
+            return _.map(roles, function (c, i) {
+              return {label: c.name, value: c.name};
+            });
+          }
+        }
+
     }
 });
 Meteor.users.attachSchema(Schemas.User);

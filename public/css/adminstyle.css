@@ -10,3 +10,9 @@ select[size].adminmultiple {
 .list-group{
   list-style: none;
 }
+.btn.btn-primary.autoform-remove-item.pull-left{
+  width: 20px;
+  height: 20px;
+  padding: 1px;
+  margin: 0;
+}
