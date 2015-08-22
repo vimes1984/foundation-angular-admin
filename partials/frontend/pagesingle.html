@@ -1,9 +1,9 @@
-<template name="pagessingle">
+<template name="pagesingle">
   {{> topbar}}
   <div ng-controller="ClientViewPageSingleCtrl" class="row">
     <div class="large-12 columns">
-      <h2>single page</h2>
-
+      <h2>[[page.title]]</h2>
+      <div ng-bind-html="to_trusted(page.content)"></div>
     </div>
   </div>
   {{> footer}}

@@ -69,8 +69,8 @@ if (Roles.userIsInRole(user, 'super-admin')) {
         url: '/pages',
         templateUrl: 'vimes1984_foundation-angular-admin_client/templates/frontend/viewpages.ng.html',
       })
-      .state('pages.single', {
-        url: '/:pageurl',
+      .state('singlepage', {
+        url: '/p/:pageurl',
         templateUrl: 'vimes1984_foundation-angular-admin_client/templates/frontend/viewpagesingle.ng.html',
       });
   }]);
