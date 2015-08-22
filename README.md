@@ -35,6 +35,51 @@ Roles.addUsersToRoles(
 );
 ```
 
+##Schema
+You can attach additional schema to the user or pages object by adding in:
+```bash
+
+meteor add aldeed:collection2
+
+```
+ to your app the in your lib/ folder create a file called schema.js and attach the additional schema like so:
+
+```javascript
+
+var Schemas = {};
+Schemas.UserProfile = new SimpleSchema({
+  myfield: {
+    type: String,
+    optional: true
+  }
+});
+
+Schemas.User = new SimpleSchema({
+    profile: {
+        type: Schemas.UserProfile,
+        optional: true
+    }
+});
+
+Meteor.users.attachSchema(Schemas.User);
+
+
+```
+### Or to the pages object like so:
+
+```javascript
+var Schemas = {};
+
+Schemas.Page = new SimpleSchema({
+    CustomField: {
+        type: String,
+        label: "Title",
+        max: 200
+    }
+});
+
+Pages.attachSchema(Schemas.Page);
+```
 ## management
 Bugs issues and the such to be tracked via gitub:
 https://github.com/vimes1984/foundation-angular-admin

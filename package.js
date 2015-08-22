@@ -27,6 +27,7 @@ Package.onUse(function(api) {
     'aldeed:autoform@4.0.0 || 5.0.0',
     'alanning:roles@1.2.13',
     'donchess:autoform-froala@0.0.2',
+    'bootstrap3:glyphicons@3.2.0_1',
     'templating',
 
   ], 'client');
@@ -54,13 +55,18 @@ Package.onUse(function(api) {
   //Templates
   api.addFiles(
     [
+      //generic
       'public/css/adminstyle.css',
       'client/templates/admin.ng.html',
       'client/templates/admindashboard.ng.html',
+      //Users
       'client/templates/adminallusers.ng.html',
       'client/templates/adminedituser.ng.html',
       'client/templates/adminnewuser.ng.html',
-      'client/templates/addnewpage.ng.html'
+      //Pages
+      'client/templates/addnewpage.ng.html',
+      'client/templates/viewallpages.ng.html',
+      'client/templates/admineditpage.ng.html',
 
     ], 'client');
   api.addFiles([
@@ -69,6 +75,8 @@ Package.onUse(function(api) {
     'partials/adminmenumain.html',
     'partials/admindashboard.html',
     'partials/addpage.html',
+    'partials/editpage.html',
+    'partials/edituser.html',
     //'partials/adminallusers.html',
 
 
@@ -79,12 +87,16 @@ Package.onUse(function(api) {
   api.addFiles('public/js/routes.ng.js', 'client');
   // All controllers here please
   api.addFiles([
-
+    //Generic
     'public/js/controllers/main.ng.js',
-    'public/js/controllers/users/adminedituser.ng.js',
-    'public/js/controllers/users/userviewall.ng.js',
-    'public/js/controllers/users/adminaddnewuserCtrl.ng.js',
+    //Users
+    'public/js/controllers/users/AdminEditUserCtrl.ng.js',
+    'public/js/controllers/users/AdminUserViewAll.ng.js',
+    'public/js/controllers/users/AdminAddNewUserCtrl.ng.js',
+    //Pages
     'public/js/controllers/pages/AdminAddNewPageCtrl.ng.js',
+    'public/js/controllers/pages/AdminViewAllPagesCtrl.ng.js',
+    'public/js/controllers/pages/AdminEditPageCtrl.ng.js',
 
   ], 'client');
   //exports

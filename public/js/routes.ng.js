@@ -43,6 +43,16 @@ if (Roles.userIsInRole(user, 'super-admin')) {
         url: '/addnewpage',
         templateUrl: 'vimes1984_foundation-angular-admin_client/templates/addnewpage.ng.html',
         controller: 'AdminAddNewPageCtrl'
+      })
+      .state('admin.viewpages', {
+        url: '/viewallpages',
+        templateUrl: 'vimes1984_foundation-angular-admin_client/templates/viewallpages.ng.html',
+        controller: 'AdminViewAllPagesCtrl'
+      })
+      .state('admin.editpage', {
+        url: '/editpage/:pageID',
+        templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admineditpage.ng.html',
+        controller: 'AdminEditPageCtrl'
       });
   }]);
 }

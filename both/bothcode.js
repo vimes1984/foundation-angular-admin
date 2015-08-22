@@ -29,15 +29,8 @@ Schemas.Page = new SimpleSchema({
         type: String,
         label: "Page url",
         regEx: /^[a-zA-Z-]{2,25}$/,
-        custom: function(){
-
-          var checkurl = Pages.find({pageurl: this.value}).fetch();
-          if(checkurl.length != 0){
-            //it doesn't so we can create a new one
-            return 'urlMatch';
-
-          }
-        },
+        index: true,
+        unique: true,
         max: 200,
         min: 2,
     }
@@ -84,10 +77,7 @@ Schemas.UserProfile = new SimpleSchema({
         type: String,
         optional: true
     },
-    blockly: {
-        type: [Object],
-        optional: true
-    },
+
     country: {
         type: Schemas.UserCountry,
         optional: true

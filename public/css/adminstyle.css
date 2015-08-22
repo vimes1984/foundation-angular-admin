@@ -7,3 +7,6 @@ select[size].adminmultiple {
   height: auto;
   background-image: none;
 }
+.list-group{
+  list-style: none;
+}
