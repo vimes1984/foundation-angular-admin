@@ -1,5 +1,5 @@
 //Help page controller
-angular.module('adminui').controller('AdminEditPageCtrl', ['$scope', '$stateParams', function($scope, $stateParams){
+angular.module('adminui').controller('AdminEditPageCtrl', ['$scope', '$stateParams', '$window', function($scope, $stateParams, $window){
 
       $scope.singlepage = Pages.find({_id: $stateParams.pageID }).fetch();
 
@@ -12,6 +12,10 @@ angular.module('adminui').controller('AdminEditPageCtrl', ['$scope', '$statePara
         var hooksObject = {
             onSuccess: function(formType, result) {
               $scope.singlepage = Pages.find({_id: $stateParams.pageID }).fetch();
+              $window.scrollTo(0, 0);
+              $scope.showalert    = true;
+              $scope.alertclass   = 'success';
+              $scope.message      = 'Page Saved';
               $scope.$apply();
             }
         };

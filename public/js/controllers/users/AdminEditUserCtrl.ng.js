@@ -1,5 +1,5 @@
 //Help page controller
-angular.module('adminui').controller('AdminEditUserCtrl', ['$scope', '$stateParams', function($scope, $stateParams){
+angular.module('adminui').controller('AdminEditUserCtrl', ['$scope', '$stateParams', '$window', function($scope, $stateParams, $window){
 
         $scope.singleuser = Meteor.users.find({_id: $stateParams.userID }).fetch()[0];
 
@@ -14,6 +14,10 @@ angular.module('adminui').controller('AdminEditUserCtrl', ['$scope', '$statePara
           var hooksObject = {
               onSuccess: function(formType, result) {
                 $scope.singleuser = Meteor.users.find({_id: $stateParams.userID }).fetch()[0];
+                $window.scrollTo(0, 0);
+                $scope.showalert    = true;
+                $scope.alertclass   = 'success';
+                $scope.message      = 'User Saved';
                 $scope.$apply();
               }
           };
