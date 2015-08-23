@@ -1,12 +1,13 @@
 # :: DO  NOT USE STILL BEING BUILT ::
 # Admin Ui Zurb Foundation and Angular Routers
 This is a admin UI built on foundation zurb, angular-meteor, and angular-ui-router
-## Requirememts
+## Requirements
 You need at the least an accounts package:
 
 ```bash
   meteor  add accounts-password
 ```
+(Feel free to add as many [others](https://atmospherejs.com/?q=accounts-) as you desire.)
 
 and the roles package:
 ```bash
