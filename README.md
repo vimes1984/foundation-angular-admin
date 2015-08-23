@@ -19,6 +19,7 @@ and the collection2 package
 meteor add aldeed:collection2
 ```
 and of course the angular-meteor and angular-ui packages  if you want to use the same app structure in your front end stuff, or extend the admin ui:
+
 ```bash
 
 meteor add urigo:angular
@@ -52,6 +53,7 @@ and so will your app need to so go ahead and install that first:
 ```bash
   meteor add alanning:roles
 ```
+
 So before your able to see the admin routes you HAVE to add your user to the super-admin group so go ahead and create a user and then add in the following where "id" is your newly created user id, in your SERVER side app code in server/roles.js install roles and run this:
 
 ```javascript
@@ -64,6 +66,7 @@ So before your able to see the admin routes you HAVE to add your user to the sup
     );
 
 ```
+
 you can also add in other user roles like so  in your serverside roles.js file:
 
 ```javascript
@@ -80,14 +83,12 @@ Roles.addUsersToRoles(
 ##Schema
 You can attach additional schema to the user or pages object by adding in:
 ```bash
-
 meteor add aldeed:collection2
-
 ```
- to your app the in your lib/ folder create a file called schema.js and attach the additional schema like so:
+
+to your app, then in your ```lib/``` folder create a file called schema.js and attach the additional schema like so:
 
 ```javascript
-
 var Schemas = {};
 Schemas.UserProfile = new SimpleSchema({
   myfield: {
@@ -104,9 +105,8 @@ Schemas.User = new SimpleSchema({
 });
 
 Meteor.users.attachSchema(Schemas.User);
-
-
 ```
+
 ### Or to the pages object like so:
 
 ```javascript
@@ -145,15 +145,19 @@ angular.module('myApp').config([
 ```
 
 You can replace templates in your app by doing the following:
+
 ```html
 <template name="myadmin">
   <h2>Test</h2>
 </template>
 ```
+
 then in your Client side app somewhere:
+
 ```javascript
 Template.myadmin.replaces("admindashboard");
 ```
+
 the default templates can be found in partials/
 
 Templates in use:
@@ -177,8 +181,8 @@ To you can place a link to the admin like so:
 ### Adding additional routes
 
 We are defining our route as
-```javascript
 
+```javascript
 $stateProvider
 .state('admin', {
   url: '/admin',
@@ -190,8 +194,8 @@ $stateProvider
         }]
       },
 });
-
 ```
+
 so you can add sub admin pages like this in your routes.js file :
 
 ```javascript
@@ -203,17 +207,15 @@ so you can add sub admin pages like this in your routes.js file :
 });
 
 ```
+
 Then define a controller for your new view:
 
 ```javascript
-
   angular.module('APPNAME').controller('blogCtrl', ['$scope', function($scope){
     //Define your controller here..
 
   }]);
-
 ```
-
 
 #### Example
 A fully functional basic example can be found here:
