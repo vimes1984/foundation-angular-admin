@@ -1,12 +1,17 @@
 # :: DO  NOT USE STILL BEING BUILT ::
+
 # Admin Ui Zurb Foundation and Angular Routers
+
 This is a admin UI built on foundation zurb, angular-meteor, and angular-ui-router
+
 ## Requirements
+
 You need at the least an accounts package:
 
 ```bash
   meteor  add accounts-password
 ```
+
 (Feel free to add as many [others](https://atmospherejs.com/?q=accounts-) as you desire.)
 
 and the roles package:
@@ -33,7 +38,6 @@ To  install this package run:
   meteor  add vimes1984:foundation-angular-admin
 ```
 
-
 ### Setup!
 You need to first require adminui in your angular app like so (typically in ```client/js/configs/appconfig/appinit/ap.ng.js```)
 
@@ -45,16 +49,18 @@ angular.module('YOURAPPNAME', ['angular-meteor', 'ui.router', 'adminui']);
 
 Ensure that ```YOURAPPNAME``` is matched in the templates ( for example: ```<body ng-app="YOURAPPNAME">``` )
 
-##ROLES
+## ROLES
 We depend on Alanning's Roles package:
 https://github.com/alanning/meteor-roles/
-and so will your app need to so go ahead and install that first:
+and your app will need to as well. So, go ahead and install that first:
 
 ```bash
   meteor add alanning:roles
 ```
 
-So before your able to see the admin routes you HAVE to add your user to the super-admin group so go ahead and create a user and then add in the following where "id" is your newly created user id, in your SERVER side app code in server/roles.js install roles and run this:
+Before you are able to see the admin routes, you *have* to add your user to the super-admin group.  Create a 
+user and then add in the following where "id" is your newly created user id, in your SERVER side app code in 
+```server/roles.js``` install roles and run this:
 
 ```javascript
     var SuperAdminUsers = [
@@ -66,11 +72,12 @@ So before your able to see the admin routes you HAVE to add your user to the sup
     );
 
 ```
+*(we will be changing this requirement soon, so that the first user will be automatically promoted to super user)*
 
-you can also add in other user roles like so  in your serverside roles.js file:
+You can expand the list of available roles by adding them in your serverside ```roles.js``` file like so:
 
 ```javascript
-//Super adim users
+//Super admin users
 var contributorUsers = [
   {_id: ''},
 ];
@@ -80,7 +87,7 @@ Roles.addUsersToRoles(
 );
 ```
 
-##Schema
+## Schema
 You can attach additional schema to the user or pages object by adding in:
 ```bash
 meteor add aldeed:collection2
@@ -125,7 +132,7 @@ Pages.attachSchema(Schemas.Page);
 
 ```
 
-## management
+## Management
 Bugs issues and the such to be tracked via gitub:
 https://github.com/vimes1984/foundation-angular-admin
 
@@ -196,7 +203,7 @@ $stateProvider
 });
 ```
 
-so you can add sub admin pages like this in your routes.js file :
+so you can add sub admin pages like this in your ```routes.js``` file :
 
 ```javascript
 
