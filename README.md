@@ -17,7 +17,7 @@ and the collection2 package
 ```bash
 meteor add aldeed:collection2
 ```
-and of course the angular-meteor and angular-ui packages  if you want to use the sam app structure in your front end stuff or extend the admin ui:
+and of course the angular-meteor and angular-ui packages  if you want to use the same app structure in your front end stuff, or extend the admin ui:
 ```bash
 
 meteor add urigo:angular
@@ -33,13 +33,16 @@ To  install this package run:
 
 
 ### Setup!
-You need to first require adminui in your angular app like so
+You need to first require adminui in your angular app like so (typically in ```client/js/configs/appconfig/appinit/ap.ng.js```)
 
 ```javascript
 
-angular.module('yetibox', ['angular-meteor', 'ui.router', 'adminui']);
+angular.module('YOURAPPNAME', ['angular-meteor', 'ui.router', 'adminui']);
 
 ```
+
+Ensure that ```YOURAPPNAME``` is matched in the templates ( for example: ```<body ng-app="YOURAPPNAME">``` )
+
 ##ROLES
 We depend on Alanning's Roles package:
 https://github.com/alanning/meteor-roles/
