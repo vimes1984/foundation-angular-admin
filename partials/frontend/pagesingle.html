@@ -4,6 +4,7 @@
     <div class="large-12 columns">
       <h2>[[page.title]]</h2>
       <div ng-bind-html="to_trusted(page.content)"></div>
+      <div><a href="/admin/pages/[[page._id]]" class="button">edit</a></div>
     </div>
   </div>
   {{> footer}}
