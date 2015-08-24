@@ -1,4 +1,6 @@
-# :: DO  NOT USE STILL BEING BUILT ::
+# :: Beta release please be carefull this may contain bugs.. ::
+
+Please feel free to open issues and submit bugs whereever you find them :D
 
 # Admin Ui Zurb Foundation and Angular Routers
 
@@ -61,8 +63,8 @@ and your app will need to as well. So, go ahead and install that first:
   meteor add alanning:roles
 ```
 
-Before you are able to see the admin routes, you *have* to add your user to the super-admin group.  Create a 
-user and then add in the following where "id" is your newly created user id, in your SERVER side app code in 
+Before you are able to see the admin routes, you *have* to add your user to the super-admin group.  Create a
+user and then add in the following where "id" is your newly created user id, in your SERVER side app code in
 ```server/roles.js``` install roles and run this:
 
 ```javascript
