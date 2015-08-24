@@ -14,6 +14,7 @@ angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$loca
                 templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admin.ng.html',
                 controller: 'MainCtrl',
                 resolve: {
+                  currentUser: ['$meteor', '$q', function($meteor, $q) {
                     return $meteor.requireUser().then(function(user) {
                       if(!_.contains(user.roles, 'super-admin')) {
                         // fail the promise chain
@@ -24,21 +25,12 @@ angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$loca
                     });
                   }]
                 }
+
             })
             .state('admin.dashboard', {
                 url: '/dashboard',
                 templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admindashboard.ng.html',
-                controller: 'MainCtrl',
-                resolve: {
-                    "currentUser": ['$meteor', function($meteor) {
-                      return $meteor.requireUser(function(user) {
-                        console.log(user);
-                        if(!_.contains(user.roles, 'super-admin')) {
-                          return 'FORBIDDEN';
-                        }
-                      });
-                    }]
-                }
+                controller: 'MainCtrl'
             })
             .state('admin.viewallusers', {
                 url: '/viewallusers',
