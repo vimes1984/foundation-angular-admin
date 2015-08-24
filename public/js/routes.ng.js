@@ -14,11 +14,13 @@ angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$loca
                 templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admin.ng.html',
                 controller: 'MainCtrl',
                 resolve: {
-                    "currentUser": ["$meteor", function ($meteor) {
-                        user = Meteor.user();
-                        if (Roles.userIsInRole(user, ['admin'])) {
-                            return user;
+                    currentUser: ['$meteor', function($meteor) {
+                      return $meteor.requireUser(function(user) {
+                        console.log(user);
+                        if(!_.contains(user.roles, 'super-admin')) {
+                          return 'FORBIDDEN';
                         }
+                      });
                     }]
                 }
             })
