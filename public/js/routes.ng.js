@@ -1,7 +1,7 @@
 user = Meteor.user();
 //if (Roles.userIsInRole(user, 'super-admin')) {
 
-
+console.log('test');
 angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$locationProvider',
     function ($urlRouterProvider, $stateProvider, $locationProvider) {
 
@@ -14,7 +14,23 @@ angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$loca
                 templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admin.ng.html',
                 controller: 'MainCtrl',
                 resolve: {
-                    currentUser: ['$meteor', function($meteor) {
+                    return $meteor.requireUser().then(function(user) {
+                      if(!_.contains(user.roles, 'super-admin')) {
+                        // fail the promise chain
+                        return $q.reject('FORBIDDEN');
+                      }
+                      // keep the success promise chain
+                      return user;
+                    });
+                  }]
+                }
+            })
+            .state('admin.dashboard', {
+                url: '/dashboard',
+                templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admindashboard.ng.html',
+                controller: 'MainCtrl',
+                resolve: {
+                    "currentUser": ['$meteor', function($meteor) {
                       return $meteor.requireUser(function(user) {
                         console.log(user);
                         if(!_.contains(user.roles, 'super-admin')) {
@@ -23,11 +39,6 @@ angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$loca
                       });
                     }]
                 }
-            })
-            .state('admin.dashboard', {
-                url: '/dashboard',
-                templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admindashboard.ng.html',
-                controller: 'MainCtrl'
             })
             .state('admin.viewallusers', {
                 url: '/viewallusers',
