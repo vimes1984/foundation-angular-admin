@@ -6,24 +6,25 @@ This is a admin UI built on foundation zurb, angular-meteor, and angular-ui-rout
 
 ## Requirements
 
-You need at the least an accounts package:
+You need at the least an accounts package (for login and user management):
 
 ```bash
-  meteor  add accounts-password
+  meteor add accounts-password
 ```
 
-(Feel free to add as many [others](https://atmospherejs.com/?q=accounts-) as you desire.)
+Feel free to add as many other [accounts packages](https://atmospherejs.com/?q=accounts-) as you desire.
 
-and the roles package:
+and the roles package (for access definition and privilege separation):
 ```bash
   meteor add alanning:roles
 ```
 
-and the collection2 package
+and the collection2 package (for automatic schema validation and management):
 ```bash
 meteor add aldeed:collection2
 ```
-and of course the angular-meteor and angular-ui packages  if you want to use the same app structure in your front end stuff, or extend the admin ui:
+and of course the angular-meteor and angular-ui packages  if you want to use the same app structure in your front end 
+stuff, or extend the admin ui:
 
 ```bash
 
@@ -33,13 +34,14 @@ meteor add urigo:angular-ui-router
 
 ```
 
-To  install this package run:
+Last, but not least, this package:
 ```bash
   meteor  add vimes1984:foundation-angular-admin
 ```
 
 ### Setup!
-You need to first require adminui in your angular app like so (typically in ```client/js/configs/appconfig/appinit/ap.ng.js```)
+You need to first require ```adminui``` in your angular app like so (typically in 
+```client/js/configs/appconfig/appinit/ap.ng.js``` ):
 
 ```javascript
 
@@ -47,7 +49,8 @@ angular.module('YOURAPPNAME', ['angular-meteor', 'ui.router', 'adminui']);
 
 ```
 
-Ensure that ```YOURAPPNAME``` is matched in the templates ( for example: ```<body ng-app="YOURAPPNAME">``` )
+Ensure that ```YOURAPPNAME``` is matched in the templates ( for example: ```<body ng-app="YOURAPPNAME">``` ), and of 
+course - change it to what makes sense for your application.
 
 ## ROLES
 We depend on Alanning's Roles package:
