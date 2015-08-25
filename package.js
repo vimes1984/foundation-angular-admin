@@ -1,7 +1,7 @@
 /*Global*/
 Package.describe({
   name: 'vimes1984:foundation-angular-admin',
-  version: '0.1.3',
+  version: '0.1.5',
   // Brief, one-line summary of the package.
   summary: 'Installs an admin ui using zurb',
   // URL to the Git repository containing the source code for this package.
@@ -29,6 +29,7 @@ Package.onUse(function(api) {
     'aldeed:autoform@4.0.0 || 5.0.0',
     'alanning:roles@1.2.13',
     //'donchess:autoform-froala@0.0.2',
+    'vimes1984:autoform-textangular@0.0.1',
     'bootstrap3:glyphicons@3.2.0_1',
     'templating',
 

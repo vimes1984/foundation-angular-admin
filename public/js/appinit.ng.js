@@ -1,4 +1,4 @@
-angular.module('adminui', [ 'angular-meteor', 'ui.router']);
+angular.module('adminui', [ 'angular-meteor', 'ui.router', 'textAngular']);
 angular.module('adminui').config([
   '$interpolateProvider',
   function ($interpolateProvider) {

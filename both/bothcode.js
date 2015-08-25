@@ -16,14 +16,12 @@ Schemas.Page = new SimpleSchema({
     content: {
         type: String,
         label: "Page content",
-        /*autoform: {
+        autoform: {
           afFieldInput: {
-            type: 'froala',
-            inlineMode: false,
-            height: 300,
-            // froala options goes here
+            type: 'textangular',
+            // textangular options goes here
           }
-        }*/
+        }
     },
     pageurl: {
         type: String,
@@ -74,10 +72,7 @@ Schemas.UserProfile = new SimpleSchema({
         optional: true,
         autoform: {
           afFieldInput: {
-            type: 'froala',
-            inlineMode: false,
-            height: 300,
-            // froala options goes here
+            type: 'textangular',
           }
         }
     },

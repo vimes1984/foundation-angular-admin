@@ -1,7 +1,5 @@
 user = Meteor.user();
 //if (Roles.userIsInRole(user, 'super-admin')) {
-
-console.log('test');
 angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$locationProvider',
     function ($urlRouterProvider, $stateProvider, $locationProvider) {
 
