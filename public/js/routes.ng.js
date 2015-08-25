@@ -28,6 +28,11 @@ angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$loca
                 templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admindashboard.ng.html',
                 controller: 'MainCtrl'
             })
+            .state('admin.site', {
+                url: '/site',
+                templateUrl: 'vimes1984_foundation-angular-admin_client/templates/site.ng.html',
+                controller: 'SiteCtrl'
+            })
             .state('admin.viewallusers', {
                 url: '/viewallusers',
                 templateUrl: 'vimes1984_foundation-angular-admin_client/templates/adminallusers.ng.html',

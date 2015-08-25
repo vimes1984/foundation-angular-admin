@@ -83,6 +83,12 @@ Schemas.UserProfile = new SimpleSchema({
     }
 });
 
+
+/*
+User
+
+User data and profile information
+ */
 Schemas.User = new SimpleSchema({
     username: {
         type: String,
@@ -132,4 +138,27 @@ Schemas.User = new SimpleSchema({
 
     }
 });
+
+/*
+Site
+
+Site settings and configuration
+ */
+Schemas.Site = new SimpleSchema({
+    sitename: {
+        type: String,
+        regEx: /^[a-z0-9A-Z_]{3,15}$/
+    },
+    slogan: {
+        type: String,
+        regEx: /^[a-z0-9A-Z_]{3,15}$/
+    }
+    // logo
+    // ..other settings..
+});
+
+
+/*
+Attach the schemas to Meteor
+ */
 Meteor.users.attachSchema(Schemas.User);
