@@ -28,7 +28,7 @@ Package.onUse(function(api) {
     'aldeed:simple-schema@1.0.3',
     'aldeed:autoform@4.0.0 || 5.0.0',
     'alanning:roles@1.2.13',
-    'donchess:autoform-froala@0.0.2',
+    //'donchess:autoform-froala@0.0.2',
     'bootstrap3:glyphicons@3.2.0_1',
     'templating',
 

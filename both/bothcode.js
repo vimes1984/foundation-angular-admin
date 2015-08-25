@@ -16,14 +16,14 @@ Schemas.Page = new SimpleSchema({
     content: {
         type: String,
         label: "Page content",
-        autoform: {
+        /*autoform: {
           afFieldInput: {
             type: 'froala',
             inlineMode: false,
             height: 300,
             // froala options goes here
           }
-        }
+        }*/
     },
     pageurl: {
         type: String,
