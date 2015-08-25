@@ -25,7 +25,7 @@ and the collection2 package (for automatic schema validation and management):
 ```bash
 meteor add aldeed:collection2
 ```
-and of course the angular-meteor and angular-ui packages  if you want to use the same app structure in your front end 
+and of course the angular-meteor and angular-ui packages  if you want to use the same app structure in your front end
 stuff, or extend the admin ui:
 
 ```bash
@@ -42,8 +42,8 @@ Last, but not least, this package:
 ```
 
 ### Setup!
-You need to first require ```adminui``` in your angular app like so (typically in 
-```client/js/configs/appconfig/appinit/ap.ng.js``` ):
+You need to first require ```adminui``` in your angular app like so (typically in
+```client/js/configs/appconfig/appinit/ap.ng.js ):```
 
 ```javascript
 
@@ -51,7 +51,7 @@ angular.module('YOURAPPNAME', ['angular-meteor', 'ui.router', 'adminui']);
 
 ```
 
-Ensure that ```YOURAPPNAME``` is matched in the templates ( for example: ```<body ng-app="YOURAPPNAME">``` ), and of 
+Ensure that ```YOURAPPNAME``` is matched in the templates ( for example: ```<body ng-app="YOURAPPNAME">``` ), and of
 course - change it to what makes sense for your application.
 
 ## ROLES
@@ -196,16 +196,24 @@ We are defining our route as
 
 ```javascript
 $stateProvider
-.state('admin', {
-  url: '/admin',
-  templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admin.ng.html',
-  controller: 'adminCtrl',
-  resolve: {
-        "currentUser": ["$meteor", function($meteor){
-          return $meteor.requireUser();
-        }]
-      },
-});
+    .state('admin', {
+        url: '/admin',
+        templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admin.ng.html',
+        controller: 'MainCtrl',
+        resolve: {
+          currentUser: ['$meteor', '$q', function($meteor, $q) {
+            return $meteor.requireUser().then(function(user) {
+              if(!_.contains(user.roles, 'super-admin')) {
+                // fail the promise chain
+                return $q.reject('FORBIDDEN');
+              }
+              // keep the success promise chain
+              return user;
+            });
+          }]
+        }
+
+    })
 ```
 
 so you can add sub admin pages like this in your ```routes.js``` file :
