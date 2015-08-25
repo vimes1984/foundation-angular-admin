@@ -109,7 +109,9 @@ Schemas.User = new SimpleSchema({
       type: Object,
       optional: true,
       blackbox: true,
-
+      autoform: {
+        type: "hidden"
+      }
     },
     // Option 2: [String] type
     // If you are sure you will never need to use role groups, then
