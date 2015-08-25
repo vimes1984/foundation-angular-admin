@@ -58,6 +58,8 @@ Package.onUse(function(api) {
   //Templates
   api.addFiles(
     [
+      //site
+      'client/templates/site.ng.html',
       //generic
       'public/css/adminstyle.css',
       'client/templates/admin.ng.html',
@@ -83,6 +85,7 @@ Package.onUse(function(api) {
     'partials/addpage.html',
     'partials/editpage.html',
     'partials/edituser.html',
+    'partials/site.html',
     'partials/frontend/pagescollection.html',
     'partials/frontend/pagesingle.html',
 
