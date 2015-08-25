@@ -109,6 +109,9 @@ Schemas.User = new SimpleSchema({
       type: Object,
       optional: true,
       blackbox: true,
+      autoform: {
+        type: "hidden"
+      }
 
     },
     // Option 2: [String] type
