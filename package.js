@@ -99,6 +99,8 @@ Package.onUse(function(api) {
   api.addFiles('public/js/routes.ng.js', 'client');
   // All controllers here please
   api.addFiles([
+    //Site
+    'public/js/controllers/site/AdminSiteEdit.ng.js',
     //Generic
     'public/js/controllers/main.ng.js',
     //Users
