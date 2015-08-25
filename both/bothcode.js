@@ -112,7 +112,6 @@ Schemas.User = new SimpleSchema({
       autoform: {
         type: "hidden"
       }
-
     },
     // Option 2: [String] type
     // If you are sure you will never need to use role groups, then

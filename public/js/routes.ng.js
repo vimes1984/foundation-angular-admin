@@ -1,5 +1,3 @@
-user = Meteor.user();
-//if (Roles.userIsInRole(user, 'super-admin')) {
 angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$locationProvider',
     function ($urlRouterProvider, $stateProvider, $locationProvider) {
 
@@ -61,7 +59,6 @@ angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$loca
                 controller: 'AdminEditPageCtrl'
             });
     }]);
-//}
 
 
 angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$locationProvider',
