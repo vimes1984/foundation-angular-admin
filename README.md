@@ -1,6 +1,6 @@
 # :: Beta release please be carefull this may contain bugs.. ::
 
-Please feel free to open issues and submit bugs whereever you find them :D
+Please feel free to open issues and submit bugs wherever you find them :D
 
 # Admin Ui Zurb Foundation and Angular Routers
 
