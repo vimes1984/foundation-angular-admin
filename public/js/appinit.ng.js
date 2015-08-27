@@ -6,8 +6,4 @@ angular.module('adminui').config([
     $interpolateProvider.endSymbol(']]');
   }
 ]);
-Template.body.helpers({
-  site: function () {
-    return Site.find({}).fetch()[0];
-  }
-});
+Template.registerHelper('site', function(){return Site.find({}).fetch()[0];});
