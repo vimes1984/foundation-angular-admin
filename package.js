@@ -29,7 +29,7 @@ Package.onUse(function(api) {
     'aldeed:autoform@4.0.0 || 5.0.0',
     'alanning:roles@1.2.13',
     //'donchess:autoform-froala@0.0.2',
-    'vimes1984:autoform-textangular@0.0.1',
+    'vimes1984:autoform-textangular@1.1.0',
     'bootstrap3:glyphicons@3.2.0_1',
     'templating',
 
