@@ -1,7 +1,7 @@
 /*Global*/
 Package.describe({
   name: 'vimes1984:foundation-angular-admin',
-  version: '0.1.5',
+  version: '0.1.6',
   // Brief, one-line summary of the package.
   summary: 'Installs an admin ui using zurb',
   // URL to the Git repository containing the source code for this package.
