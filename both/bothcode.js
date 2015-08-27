@@ -159,8 +159,7 @@ Schemas.Site = new SimpleSchema({
     },
     slogan: {
         type: String,
-        optional: true,
-        regEx: /^[a-z0-9A-Z_]{3,15}$/
+        optional: true
     }
     // logo
     // ..other settings..
