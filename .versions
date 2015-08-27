@@ -31,7 +31,7 @@ json@1.0.3
 lai:collection-extensions@0.1.4
 less@1.0.14
 livedata@1.0.13
-local-test:vimes1984:foundation-angular-admin@0.1.4
+local-test:vimes1984:foundation-angular-admin@0.1.6
 localstorage@1.0.3
 logging@1.0.7
 matthew:foundation5-sass@1.0.0
@@ -54,4 +54,5 @@ ui@1.0.6
 underscore@1.0.3
 urigo:angular@0.9.3
 urigo:angular-ui-router@0.7.0
-vimes1984:foundation-angular-admin@0.1.4
+vimes1984:autoform-textangular@1.1.1
+vimes1984:foundation-angular-admin@0.1.6
