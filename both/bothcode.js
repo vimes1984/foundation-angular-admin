@@ -160,6 +160,15 @@ Schemas.Site = new SimpleSchema({
     slogan: {
         type: String,
         optional: true
+    },
+    sitedesc: {
+      type: String,
+      optional: true,
+      autoform: {
+        afFieldInput: {
+          type: 'textangular',
+        }
+      }
     }
     // logo
     // ..other settings..

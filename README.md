@@ -91,6 +91,14 @@ Roles.addUsersToRoles(
   ['contributors']
 );
 ```
+## Site Options
+We have a global mongo collection registered to configure site options such as title, logo, Tagline etc etc
+You can access them in Blaze like so : {{site.sitename}}
+We currently have registerd:
+* sitename
+* slogan
+* sitedesc
+again you can extend the scheme on your app by following the examples given below :D
 
 ## Schema
 You can attach additional schema to the user or pages object by adding in:
