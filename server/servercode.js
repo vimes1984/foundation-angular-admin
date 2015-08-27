@@ -16,7 +16,11 @@ Meteor.publish("pages", function () {
     return Pages.find();
 
 });
+Meteor.publish('site', function (){
 
+    return Site.find();
+
+});
 /******* ROLES **********/
 //Super adim users
 var editorUsers = [
@@ -39,6 +43,8 @@ Meteor.publish('roles', function (){
 
 
 });
+
+
 /******* Methods **********/
 
 //Methods

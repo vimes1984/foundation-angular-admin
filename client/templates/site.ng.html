@@ -1,1 +1,19 @@
-<meteor-include src="siteadmin"></meteor-include>
+<section class="main-section">
+  <!-- content goes here -->
+  <br>
+  <br>
+  <div class="row">
+    <div class="large-12 columns">
+      <h1 class="text-center">Generic site options</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <div data-alert class="alert-box" ng-class="alertclass" ng-show="showalert">
+        <p>[[message]]</p>
+        <a href="#" class="close">&times;</a>
+      </div>
+      <meteor-include src="siteadmin"></meteor-include>
+    </div>
+  </div>
+</section>

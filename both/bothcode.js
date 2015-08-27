@@ -36,6 +36,14 @@ Schemas.Page = new SimpleSchema({
 
 Pages.attachSchema(Schemas.Page);
 
+
+
+
+/*
+User
+
+User data and profile information
+ */
 Schemas.UserCountry = new SimpleSchema({
     name: {
         type: String
@@ -45,7 +53,6 @@ Schemas.UserCountry = new SimpleSchema({
         regEx: /^[A-Z]{2}$/
     }
 });
-
 Schemas.UserProfile = new SimpleSchema({
     name: {
         type: String,
@@ -82,13 +89,6 @@ Schemas.UserProfile = new SimpleSchema({
         optional: true
     }
 });
-
-
-/*
-User
-
-User data and profile information
- */
 Schemas.User = new SimpleSchema({
     username: {
         type: String,
@@ -140,25 +140,30 @@ Schemas.User = new SimpleSchema({
 });
 
 /*
+Attach the schemas to Meteor
+ */
+Meteor.users.attachSchema(Schemas.User);
+
+/*
 Site
 
 Site settings and configuration
  */
+Site = new Mongo.Collection("site");
+
 Schemas.Site = new SimpleSchema({
     sitename: {
         type: String,
+        optional: true,
         regEx: /^[a-z0-9A-Z_]{3,15}$/
     },
     slogan: {
         type: String,
+        optional: true,
         regEx: /^[a-z0-9A-Z_]{3,15}$/
     }
     // logo
     // ..other settings..
 });
 
-
-/*
-Attach the schemas to Meteor
- */
-Meteor.users.attachSchema(Schemas.User);
+Site.attachSchema(Schemas.Site);

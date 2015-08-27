@@ -5,7 +5,7 @@ angular.module('adminui').controller('AdminEditPageCtrl', ['$scope', '$statePara
 
        Template.editpage.helpers({
           updatePagesingle: function() {
-            return Pages.find({_id: $stateParams.pageID }).fetch()[0];
+            return Pages.find({}).fetch()[0];
           }
         });
 

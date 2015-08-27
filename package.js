@@ -120,6 +120,7 @@ Package.onUse(function(api) {
   api.export([
     'Roles',
     'Pages',
+    'Site',
     ],['client']);
 });
 
