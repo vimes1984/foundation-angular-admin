@@ -31,6 +31,18 @@ Schemas.Page = new SimpleSchema({
         unique: true,
         max: 200,
         min: 2,
+    },
+    metatags: {
+        type: String,
+        label: "META Tags",
+        max: 200,
+        min: 2,
+    },
+    metadesc: {
+        type: String,
+        label: "META Description",
+        max: 200,
+        min: 2,
     }
 });
 
