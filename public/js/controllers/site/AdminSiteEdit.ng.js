@@ -3,9 +3,7 @@ angular.module('adminui').controller('SiteCtrl', ['$scope', '$stateParams', '$wi
 
       $meteor.collection(Site, false).subscribe('site');
       $scope.siteoptions = Site.find().fetch();
-
-      console.log($scope.siteoptions);
-
+      console.log( $scope.siteoptions );
        Template.siteadmin.helpers({
          SiteOptions: function() {
             return Site.find().fetch()[0];;

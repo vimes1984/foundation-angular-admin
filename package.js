@@ -14,6 +14,14 @@ Package.describe({
 Package.onUse(function(api) {
 
   api.versionsFrom('1.1.0.3');
+  //Denpencies for both client and server
+  api.use([
+    'cfs:standard-packages@0.5.9',
+    'cfs:filesystem@0.1.2',
+    //'cfs:gridfs@0.0.33',
+    'cfs:autoform@2.2.1',
+  ], ['client','server']);
+
   //client dependencies
   api.use([
     'matthew:foundation5-sass@1.0.0',
@@ -33,13 +41,13 @@ Package.onUse(function(api) {
     'bootstrap3:glyphicons@3.2.0_1',
     'templating',
 
+
   ], 'client');
 
   //Server dependencies
   api.use([
 
     'aldeed:collection2@2.3.3',
-    'donchess:autoform-froala@0.0.2',
     'alanning:roles@1.2.13',
 
   ], 'server');
@@ -121,6 +129,8 @@ Package.onUse(function(api) {
     'Roles',
     'Pages',
     'Site',
+    'FS',
+    'Images'
     ],['client']);
 });
 

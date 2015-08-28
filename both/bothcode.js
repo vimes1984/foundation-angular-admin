@@ -152,6 +152,16 @@ Site settings and configuration
 Site = new Mongo.Collection("site");
 
 Schemas.Site = new SimpleSchema({
+    sitelogo: {
+        type: String,
+        optional: true,
+        autoform: {
+              afFieldInput: {
+                type: "cfs-file",
+                collection: "images"
+              }
+            }
+    },
     sitename: {
         type: String,
         optional: true,
@@ -169,9 +179,38 @@ Schemas.Site = new SimpleSchema({
           type: 'textangular',
         }
       }
-    }
+    },
     // logo
     // ..other settings..
 });
 
 Site.attachSchema(Schemas.Site);
+/**
+ * Files
+ */
+Files = new FS.Collection("images", {
+   stores: [new FS.Store.FileSystem("imagestore", {
+     path: "~/uploads"
+   })]
+});
+
+console.log(Files);
+
+
+ /*
+ store using grid not in use...
+*/
+/*
+Files = new FS.Collection("files", {
+  stores: [new FS.Store.GridFS("filesStore")]
+});
+Files.allow({
+  insert: function () {
+    return true;
+  },
+  download: function () {
+    return true;
+  },
+  fetch: null
+});
+*/

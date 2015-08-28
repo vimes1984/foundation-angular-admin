@@ -43,6 +43,16 @@ Meteor.publish('roles', function (){
 
 
 });
+/******* FS files **********/
+Files.allow({
+  insert: function () {
+    return true;
+  },
+  download: function () {
+    return true;
+  },
+  fetch: null
+});
 
 
 /******* Methods **********/
