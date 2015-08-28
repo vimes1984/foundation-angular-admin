@@ -37,12 +37,14 @@ Schemas.Page = new SimpleSchema({
         label: "META Tags",
         max: 200,
         min: 2,
+        optional: true
     },
     metadesc: {
         type: String,
         label: "META Description",
         max: 200,
         min: 2,
+        optional: true
     }
 });
 
