@@ -202,15 +202,8 @@ Site.attachSchema(Schemas.Site);
  * Images
 **/
 
-
-var createThumb = function(fileObj, readStream, writeStream) {
-  // Transform the image into a 10x10px thumbnail
-  gm(readStream, fileObj.name()).resize('10', '10').stream().pipe(writeStream);
-};
-
 Images = new FS.Collection("images", {
   stores: [
-    //new FS.Store.FileSystem("thumbs", { transformWrite: createThumb }),
     new FS.Store.FileSystem("images"),
   ],
   filter: {
