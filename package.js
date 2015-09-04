@@ -130,8 +130,11 @@ Package.onUse(function(api) {
     'Pages',
     'Site',
     'FS',
-    'Images'
     ],['client']);
+  //exports
+  api.export([
+    'Images'
+    ],['client', 'server']);
 });
 
 Package.onTest(function(api) {
