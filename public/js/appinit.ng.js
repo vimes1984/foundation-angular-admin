@@ -14,6 +14,6 @@ Template.registerHelper('logo',
 function(){
   var imageid = Site.find({}).fetch()[0];
   var logo = Images.find({_id: imageid.sitelogo}).fetch()[0];
-  console.log(logo.copies.images.name);
-  return logo.copies.images.name;
+  console.log(logo.copies.images.key);
+  return logo.copies.images.key;
 });

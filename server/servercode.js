@@ -59,6 +59,10 @@ Images.allow({
   fetch: null
 });
 
+FS.HTTP.publish(Images, function () {
+  // `this` provides a context similar to Meteor.publish
+  return Images.find();
+});
 
 /******* Methods **********/
 
