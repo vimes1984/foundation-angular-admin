@@ -1,27 +1,29 @@
-/******* P{ublish's **********/
+/******* Publish's **********/
 
 Meteor.publish("users", function () {
   if (!this || !Roles.userIsInRole(this.userId, 'super-admin')) {
     throw new Meteor.Error(403, "Access denied")
   }else{
-
     return Meteor.users.find({}, {});
   }
-
 });
-
 
 Meteor.publish("pages", function () {
-
     return Pages.find();
-
 });
+
 Meteor.publish('site', function (){
-
     return Site.find();
-
 });
+
+
+Meteor.publish('logo', function (){
+    return Images.find();
+});
+
+
 /******* ROLES **********/
+
 //Super adim users
 var editorUsers = [
   {_id: ''},
@@ -43,8 +45,11 @@ Meteor.publish('roles', function (){
 
 
 });
+
+
 /******* FS files **********/
-Files.allow({
+
+Images.allow({
   insert: function () {
     return true;
   },

@@ -4,7 +4,7 @@ Pages = new Mongo.Collection("pages");
 var Schemas = {};
 
 SimpleSchema.messages({
-  "urlMatch": "Url allready exists"
+    "urlMatch": "Url allready exists"
 });
 
 Schemas.Page = new SimpleSchema({
@@ -17,10 +17,10 @@ Schemas.Page = new SimpleSchema({
         type: String,
         label: "Page content",
         autoform: {
-          afFieldInput: {
-            type: 'textangular',
-            // textangular options goes here
-          }
+            afFieldInput: {
+                type: 'textangular',
+                // textangular options goes here
+            }
         }
     },
     pageurl: {
@@ -54,9 +54,9 @@ Pages.attachSchema(Schemas.Page);
 
 
 /*
-User
+ User
 
-User data and profile information
+ User data and profile information
  */
 Schemas.UserCountry = new SimpleSchema({
     name: {
@@ -92,12 +92,11 @@ Schemas.UserProfile = new SimpleSchema({
         type: String,
         optional: true,
         autoform: {
-          afFieldInput: {
-            type: 'textangular',
-          }
+            afFieldInput: {
+                type: 'textangular',
+            }
         }
     },
-
     country: {
         type: Schemas.UserCountry,
         optional: true
@@ -126,12 +125,12 @@ Schemas.User = new SimpleSchema({
         optional: true
     },
     services: {
-      type: Object,
-      optional: true,
-      blackbox: true,
-      autoform: {
-        omit: true
-      }
+        type: Object,
+        optional: true,
+        blackbox: true,
+        autoform: {
+            omit: true
+        }
     },
     // Option 2: [String] type
     // If you are sure you will never need to use role groups, then
@@ -141,27 +140,25 @@ Schemas.User = new SimpleSchema({
         optional: true,
         label: "Pick Roles",
         autoform: {
-          options: function () {
-            var roles = Roles.getAllRoles().fetch();
+            options: function () {
+                var roles = Roles.getAllRoles().fetch();
 
-            return _.map(roles, function (c, i) {
-              return {label: c.name, value: c.name};
-            });
-          }
+                return _.map(roles, function (c, i) {
+                    return {label: c.name, value: c.name};
+                });
+            }
         }
-
     }
 });
 
-/*
-Attach the schemas to Meteor
- */
+// Attach the user schemas to Meteor.users
 Meteor.users.attachSchema(Schemas.User);
 
-/*
-Site
 
-Site settings and configuration
+/*
+ Site
+
+ Site settings and configuration
  */
 Site = new Mongo.Collection("site");
 
@@ -170,11 +167,11 @@ Schemas.Site = new SimpleSchema({
         type: String,
         optional: true,
         autoform: {
-              afFieldInput: {
+            afFieldInput: {
                 type: "cfs-file",
                 collection: "images"
-              }
             }
+        }
     },
     sitename: {
         type: String,
@@ -186,45 +183,39 @@ Schemas.Site = new SimpleSchema({
         optional: true
     },
     sitedesc: {
-      type: String,
-      optional: true,
-      autoform: {
-        afFieldInput: {
-          type: 'textangular',
+        type: String,
+        optional: true,
+        autoform: {
+            afFieldInput: {
+                type: 'textangular',
+            }
         }
-      }
-    },
-    // logo
-    // ..other settings..
+    }
 });
 
+// Attach the Site schemas to Site
 Site.attachSchema(Schemas.Site);
+
+
+
 /**
- * Files
- */
-Files = new FS.Collection("images", {
-   stores: [new FS.Store.FileSystem("imagestore", {
-     path: "~/uploads"
-   })]
-});
-
-console.log(Files);
+ * Images
+**/
 
 
- /*
- store using grid not in use...
-*/
-/*
-Files = new FS.Collection("files", {
-  stores: [new FS.Store.GridFS("filesStore")]
+var createThumb = function(fileObj, readStream, writeStream) {
+  // Transform the image into a 10x10px thumbnail
+  gm(readStream, fileObj.name()).resize('10', '10').stream().pipe(writeStream);
+};
+
+Images = new FS.Collection("images", {
+  stores: [
+    //new FS.Store.FileSystem("thumbs", { transformWrite: createThumb }),
+    new FS.Store.FileSystem("images"),
+  ],
+  filter: {
+    allow: {
+      contentTypes: ['image/*'] //allow only images in this FS.Collection
+    }
+  }
 });
-Files.allow({
-  insert: function () {
-    return true;
-  },
-  download: function () {
-    return true;
-  },
-  fetch: null
-});
-*/
