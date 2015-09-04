@@ -18,7 +18,12 @@ Meteor.publish('site', function (){
 
 
 Meteor.publish('logo', function (){
-    return Images.find();
+    var imageid = Site.find({}).fetch()[0];
+    var logo = Images.find({_id: imageid.sitelogo}).fetch()[0];
+
+    console.log(logo.copies.images.name);
+
+    return logo;
 });
 
 
