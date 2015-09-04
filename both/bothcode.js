@@ -168,7 +168,7 @@ Schemas.Site = new SimpleSchema({
         optional: true,
         autoform: {
             afFieldInput: {
-                type: "cfs-file",
+                type: "fileUpload",
                 collection: "images"
             }
         }

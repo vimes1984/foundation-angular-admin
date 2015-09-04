@@ -20,6 +20,7 @@ Package.onUse(function(api) {
     'cfs:filesystem@0.1.2',
     //'cfs:gridfs@0.0.33',
     'cfs:autoform@2.2.1',
+    'yogiben:autoform-file@0.1.0'
   ], ['client','server']);
 
   //client dependencies
@@ -130,11 +131,12 @@ Package.onUse(function(api) {
     'Pages',
     'Site',
     'FS',
-    ],['client']);
-  //exports
-  api.export([
     'Images'
-    ],['client', 'server']);
+    ],['client']);
+    //exports
+    api.export([
+      'Images'
+      ],['client', 'server']);
 });
 
 Package.onTest(function(api) {
