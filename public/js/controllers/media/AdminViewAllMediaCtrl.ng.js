@@ -6,8 +6,8 @@ angular.module('adminui').controller('AdminViewAllMediaCtrl', ['$scope', '$meteo
 
   angular.forEach($scope.mediascope, function(value, key){
 
-    var thisfile        = Media.find({_id: value.media}).fetch()[0];
-    value.thismedia = thisfile;
+    var thisfile        = Media.findOne({_id: value.media});
+    value.thismedia     = thisfile.url('thumb');
   });
     console.log($scope.mediascope);
 }]);
