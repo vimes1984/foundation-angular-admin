@@ -15,7 +15,7 @@
       <tbody>
         <tr ng-repeat="singlefile in media track by $index">
           <td>[[singlefile._id]]</td>
-          <td><a href="[[uploadUrl]]/[[singlefile.media]]">/[[uploadUrl]]/[[singlefile.media]]</a></td>
+          <td><a href="[[$parent.uploadurl]]/[[singlefile.media]]">[[$parent.uploadurl]]/[[singlefile.media]]</a></td>
           <td><a href="/admin/editmedia/[[singlefile._id]]">Edit</a></td>
         </tr>
       </tbody>
