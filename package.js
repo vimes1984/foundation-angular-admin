@@ -99,6 +99,7 @@ Package.onUse(function(api) {
     'partials/editpage.html',
     'partials/edituser.html',
     'partials/site.html',
+    'partials/insertmediaform.html',
     'partials/frontend/pagescollection.html',
     'partials/frontend/pagesingle.html',
 
