@@ -212,3 +212,19 @@ Media = new FS.Collection("media", {
     }
   }
 });
+
+Schemas.Media = new SimpleSchema({
+    media: {
+        type: String,
+        optional: true,
+        autoform: {
+            afFieldInput: {
+                type: "fileUpload",
+                collection: "media"
+            }
+        }
+    },
+});
+
+// Attach the Site schemas to Site
+Media.attachSchema(Schemas.Media);
