@@ -3,7 +3,7 @@ angular.module('adminui').controller('AdminEditMediaCtrl', ['$scope', '$statePar
 
       $scope.singlepage = Pages.find({_id: $stateParams.mediaID }).fetch();
 
-       Template.editpage.helpers({
+       Template.editmedia.helpers({
           updateMediasingle: function() {
             return MediaCollection.findOne();
           }
@@ -11,13 +11,13 @@ angular.module('adminui').controller('AdminEditMediaCtrl', ['$scope', '$statePar
 
         var hooksObject = {
             onSuccess: function(formType, result) {
-              $scope.singlepage = Pages.findOne({_id: $stateParams.mediaID });
+              $scope.singlefile = MediaCollection.findOne({_id: $stateParams.mediaID });
               $window.scrollTo(0, 0);
               $scope.showalert    = true;
               $scope.alertclass   = 'success';
-              $scope.message      = 'Page Saved';
+              $scope.message      = 'Media Saved';
               $scope.$apply();
             }
         };
-        AutoForm.addHooks('updateMediaorm', hooksObject, true);
+        AutoForm.addHooks('updateMediaForm', hooksObject, true);
 }]);
