@@ -62,6 +62,21 @@ angular.module('adminui').config(['$urlRouterProvider', '$stateProvider', '$loca
                 url: '/editpage/:pageID',
                 templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admineditpage.ng.html',
                 controller: 'AdminEditPageCtrl'
+            })
+            .state('admin.addnewmedia', {
+                url: '/addnewmedia',
+                templateUrl: 'vimes1984_foundation-angular-admin_client/templates/adminaddnewmedia.ng.html',
+                controller: 'AdminAddNewMediaCtrl'
+            })
+            .state('admin.viewmedia', {
+                url: '/viewallmedia',
+                templateUrl: 'vimes1984_foundation-angular-admin_client/templates/adminviewallmedia.ng.html',
+                controller: 'AdminViewAllMediaCtrl'
+            })
+            .state('admin.editmedia', {
+                url: '/editmedia/:mediaID',
+                templateUrl: 'vimes1984_foundation-angular-admin_client/templates/admineditmedia.ng.html',
+                controller: 'AdminEditMediaCtrl'
             });
     }]);
 

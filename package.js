@@ -81,6 +81,10 @@ Package.onUse(function(api) {
       'client/templates/addnewpage.ng.html',
       'client/templates/viewallpages.ng.html',
       'client/templates/admineditpage.ng.html',
+      //Media
+      'client/templates/adminaddnewmedia.ng.html',
+      'client/templates/adminviewallmedia.ng.html',
+      'client/templates/admineditmedia.ng.html',
       //frontend
       'client/templates/frontend/viewpages.ng.html',
       'client/templates/frontend/viewpagesingle.ng.html',
@@ -120,6 +124,10 @@ Package.onUse(function(api) {
     'public/js/controllers/pages/AdminAddNewPageCtrl.ng.js',
     'public/js/controllers/pages/AdminViewAllPagesCtrl.ng.js',
     'public/js/controllers/pages/AdminEditPageCtrl.ng.js',
+    //Media
+    'public/js/controllers/media/AdminAddNewMediaCtrl.ng.js',
+    'public/js/controllers/media/AdminViewAllMediaCtrl.ng.js',
+    'public/js/controllers/media/AdminEditMediaCtrl.ng.js',
     //frontend
     'public/js/controllers/frontend/ClientViewPageCtrl.ng.js',
     'public/js/controllers/frontend/ClientViewSinglePageCtrl.ng.js',

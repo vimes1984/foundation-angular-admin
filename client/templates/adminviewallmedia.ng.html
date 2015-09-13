@@ -1,0 +1,24 @@
+<section class="main-section">
+  <!-- content goes here -->
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="text-center">All Media..</h2>
+    </div>
+    <table class="usertable" role="grid">
+      <thead>
+        <tr>
+          <td>Title</td>
+          <td>Route</td>
+          <td>Edit</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="singlepage in pages track by $index">
+          <td>[[singlepage.title]]</td>
+          <td><a href="/pages/[[singlepage.pageurl]]">/pages/[[singlepage.pageurl]]</a></td>
+          <td><a href="/admin/editpage/[[singlepage._id]]">Edit</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

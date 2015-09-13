@@ -1,71 +1,79 @@
 <template name="admindashboard">
-  <section class="main-section">
-    <!-- content goes here -->
-    <div class="row">
-      <div class="large-12 columns">
-        <h2 class="text-center">Dashboard</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-          <div class="row">
-            <div class="large-6 columns">
-              <div class="panel">
-                <h1  class="text-center"><i class="fa fa-file-image-o"></i> Media Library</h1>
-                <br>
-                <a class="button expand" ng-href="/admin/site">Add new</a>
-              </div>
-            </div>
-            <div class="large-6 columns">
-              <div class="panel">
-                <h1  class="text-center"><i class="fa fa-cogs"></i> Site Config</h1>
-                <br>
-                <a class="button expand" ng-href="/admin/site">Edit</a>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row" data-equalizer>
-      <div class="large-6 columns">
-        <div class="panel" data-equalizer-watch>
-          <div class="row">
+    <section class="main-section">
+        <!-- content goes here -->
+        <div class="row">
             <div class="large-12 columns">
-              <h1  class="text-center"> <i class="fa fa-users"></i> Users</h1>
-              <h4  class="text-center">&nbsp;</h4>
-            <br>
-            <div class="row">
-              <div class="large-6 columns">
-                <a class="button expand" ng-href="/admin/addnewuser">Add new</a>
-              </div>
-              <div class="large-6 columns">
-                <a class="button expand" ng-href="/admin/viewallusers">View all</a>
-              </div>
+                <h2 class="text-center">Dashboard</h2>
             </div>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="large-6 columns">
-        <div class="panel" data-equalizer-watch>
-          <div class="row">
+        <div class="row">
             <div class="large-12 columns">
-              <h1  class="text-center"><i class="fa fa-file-text"></i> Pages</h1>
-              <h4  class="text-center"> <a href="/pages">View Pages collection on the front end</a></h4>
-              <br>
-              <div class="row">
-                <div class="large-6 columns">
-                  <a class="button expand" ng-href="/admin/addnewpage">Add new</a>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <div class="panel">
+                            <h1 class="text-center"><i class="fa fa-file-image-o"></i> Media Library</h1>
+                            <div class="row">
+                                <div class="large-6 columns">
+                                    <a class="button expand" ng-href="/admin/addnewmedia">Add new</a>
+                                </div>
+                                <div class="large-6 columns">
+                                    <a class="button expand" ng-href="/admin/viewallmedia">View all</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="large-6 columns">
+                        <div class="panel">
+                            <h1 class="text-center"><i class="fa fa-cogs"></i> Site Config</h1>
+                            <br>
+                            <a class="button expand" ng-href="/admin/site">Edit</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="large-6 columns">
-                  <a class="button expand" ng-href="/admin/viewallpages">View all</a>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+        <div class="row" data-equalizer>
+            <div class="large-6 columns">
+                <div class="panel" data-equalizer-watch>
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <h1 class="text-center"><i class="fa fa-users"></i> Users</h1>
+                            <h4 class="text-center">&nbsp;</h4>
+                            <br>
+
+                            <div class="row">
+                                <div class="large-6 columns">
+                                    <a class="button expand" ng-href="/admin/addnewuser">Add new</a>
+                                </div>
+                                <div class="large-6 columns">
+                                    <a class="button expand" ng-href="/admin/viewallusers">View all</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="large-6 columns">
+                <div class="panel" data-equalizer-watch>
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <h1 class="text-center"><i class="fa fa-file-text"></i> Pages</h1>
+                            <h4 class="text-center"><a href="/pages">View Pages collection on the front end</a></h4>
+                            <br>
+
+                            <div class="row">
+                                <div class="large-6 columns">
+                                    <a class="button expand" ng-href="/admin/addnewpage">Add new</a>
+                                </div>
+                                <div class="large-6 columns">
+                                    <a class="button expand" ng-href="/admin/viewallpages">View all</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </template>
