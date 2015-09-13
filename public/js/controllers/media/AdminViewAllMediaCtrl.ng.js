@@ -25,7 +25,7 @@ angular.module('adminui').controller('AdminViewAllMediaCtrl', ['$scope', '$meteo
       filename: null
     };
     value.original     = thisfile.url(originalopts);
-    value.thumbnail     = thisfile.url(thumopts);
+    value.thumbnail     = thisfile.url(thumbopts);
   });
     console.log($scope.mediascope);
 }]);
