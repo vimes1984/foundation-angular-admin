@@ -6,7 +6,17 @@ angular.module('adminui').controller('AdminViewAllMediaCtrl', ['$scope', '$meteo
 
     angular.forEach($scope.mediascope, function (value, key) {
     var thisfile        = Media.findOne({_id: value.media});
-    value.thismedia     = thisfile.url('thumb');
+    var options         = {
+      store: 'thumbs',
+      auth: null,
+      download: false,
+      metadata: false,
+      brokenIsFine: false,
+      uploading: null, // return this URL while uploading
+      storing: null, // return this URL while storing
+      filename: null
+    }
+    value.thismedia     = thisfile.url(options);
   });
     console.log($scope.mediascope);
 }]);
