@@ -1,23 +1,27 @@
 /******* Publish's **********/
 
 Meteor.publish("users", function () {
-  if (!this || !Roles.userIsInRole(this.userId, 'super-admin')) {
-    throw new Meteor.Error(403, "Access denied")
-  }else{
-    return Meteor.users.find({}, {});
-  }
+    if (!this || !Roles.userIsInRole(this.userId, 'super-admin')) {
+        throw new Meteor.Error(403, "Access denied")
+    } else {
+        return Meteor.users.find({}, {});
+    }
 });
 
 Meteor.publish("pages", function () {
     return Pages.find();
 });
 
-Meteor.publish('site', function (){
+Meteor.publish('site', function () {
     return Site.find();
 });
 
+Meteor.publish("mediacollection", function () {
+    return MediaCollection.find();
+});
 
-Meteor.publish('logo', function (){
+
+Meteor.publish('logo', function () {
     var imageid = Site.find({}).fetch()[0];
     var logo = Media.find({_id: imageid.sitelogo}).fetch()[0];
 
@@ -29,96 +33,92 @@ Meteor.publish('logo', function (){
 
 //Super adim users
 var editorUsers = [
-  {_id: ''},
+    {_id: ''},
 ];
 Roles.addUsersToRoles(
-  editorUsers,
-  ['editor']
+    editorUsers,
+    ['editor']
 );
 
 
-Meteor.publish('roles', function (){
-  if (!this || !Roles.userIsInRole(this.userId, 'super-admin')) {
-    throw new Meteor.Error(403, "Access denied")
-  }else{
-
-    return Meteor.roles.find({})
-
-  }
-
-
+Meteor.publish('roles', function () {
+    if (!this || !Roles.userIsInRole(this.userId, 'super-admin')) {
+        throw new Meteor.Error(403, "Access denied")
+    } else {
+        return Meteor.roles.find({})
+    }
 });
 
 
 /******* FS files **********/
 
 Media.allow({
-  insert: function () {
-    return true;
-  },
-  download: function () {
-    return true;
-  },
-  fetch: null
+    insert: function () {
+        return true;
+    },
+    download: function () {
+        return true;
+    },
+    fetch: null
 });
 
 FS.HTTP.publish(Media, function () {
-  // `this` provides a context similar to Meteor.publish
-  return Media.find();
+    // `this` provides a context similar to Meteor.publish
+    return Media.find();
 });
 
 /******* Methods **********/
 
 //Methods
 Meteor.methods({
-  /**
-   * Adds  a user to a specific Role
-   *
-   * @method addUser
-   * @param {object}
-   *
-   */
-  addUser: function (userboject) {
-     // Make sure the user is superadmin before allowing them to set roles
-     var loggedInUser = Meteor.user()
+    /**
+     * Adds  a user to a specific Role
+     *
+     * @method addUser
+     * @param {object}
+     *
+     */
+    addUser: function (userboject) {
+        // Make sure the user is superadmin before allowing them to set roles
+        var loggedInUser = Meteor.user()
 
-     if (!loggedInUser ||!Roles.userIsInRole(loggedInUser,  'super-admin')) {
-       throw new Meteor.Error(403, "Access denied")
-     }
-     console.log(userboject);
-     var newuser = Accounts.createUser({
-                     username:    userboject.username,
-                     email:       userboject.email,
-                     password:    userboject.password,
-                     profile: {
-                       name:       userboject.name,
-                       additional: userboject.additional,
-                       blockly: []
-                     },
-                   });
+        if (!loggedInUser || !Roles.userIsInRole(loggedInUser, 'super-admin')) {
+            throw new Meteor.Error(403, "Access denied")
+        }
+        console.log(userboject);
+        var newuser = Accounts.createUser({
+            username: userboject.username,
+            email: userboject.email,
+            password: userboject.password,
+            profile: {
+                name: userboject.name,
+                additional: userboject.additional,
+                blockly: []
+            },
+        });
 
-    Roles.setUserRoles(newuser, userboject.role.name);
-    console.log(userboject);
-    return newuser;
-  },
+        Roles.setUserRoles(newuser, userboject.role.name);
+        console.log(userboject);
+        return newuser;
+    },
 
-  /**
-   * delete a user from a specific group
-   *
-   * @method deleteUser
-   * @param {String} targetUserId _id of user to delete
-   * @param {String} group Company to update permissions for
-   */
-  deleteUser: function (targetUserId, group) {
-    var loggedInUser = Meteor.user()
+    /**
+     * delete a user from a specific group
+     *
+     * @method deleteUser
+     * @param {String} targetUserId _id of user to delete
+     * @param {String} group Company to update permissions for
+     */
+    deleteUser: function (targetUserId, group) {
+        var loggedInUser = Meteor.user()
 
-    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, 'super-admin')) {
-      throw new Meteor.Error(403, "Access denied")
+        if (!loggedInUser || !Roles.userIsInRole(loggedInUser, 'super-admin')) {
+            throw new Meteor.Error(403, "Access denied")
+        }
+
+        // remove permissions for target up
+        Roles.setUserRoles(targetUserId, [])
+
+        // do other actions required when a user is removed...
     }
-
-    // remove permissions for target up
-    Roles.setUserRoles(targetUserId, [])
-
-    // do other actions required when a user is removed...
-  }
 });

@@ -226,6 +226,21 @@ Schemas.MediaCollection = new SimpleSchema({
             }
         }
     },
+    caption: {
+        type: String,
+        optional: true
+    },
+    alttext: {
+        type: String,
+        optional: true
+    },
+    /* Other fields that might be desired:
+         owner
+         public y/n (i.e. images only logged in user may see)
+         alternate URL
+         focous coords (for cropping)
+    */
+
 });
 
 // Attach the Site schemas to Site
