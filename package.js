@@ -16,7 +16,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
   //Denpencies for both client and server
   api.use([
-    'cfs:graphicsmagick@0.0.18','
+    'cfs:graphicsmagick@0.0.18',
     'cfs:standard-packages@0.5.9',
     'cfs:filesystem@0.1.2',
     //'cfs:gridfs@0.0.33',
