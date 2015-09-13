@@ -1,4 +1,4 @@
-//Help page controller
+//media controller
 angular.module('adminui').controller('AdminEditMediaCtrl', ['$scope', '$stateParams', '$window', function($scope, $stateParams, $window){
 
       $scope.singlepage = MediaCollection.find({_id: $stateParams.mediaID }).fetch();
