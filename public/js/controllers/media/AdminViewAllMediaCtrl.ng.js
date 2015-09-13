@@ -5,7 +5,7 @@ angular.module('adminui').controller('AdminViewAllMediaCtrl', ['$scope', '$meteo
     angular.forEach($scope.mediascope, function (value, key) {
     var thisfile        = Media.findOne({_id: value.media});
     var originalopts         = {
-      store: 'thumbs',
+      store: 'media',
       auth: null,
       download: false,
       metadata: false,
@@ -15,7 +15,7 @@ angular.module('adminui').controller('AdminViewAllMediaCtrl', ['$scope', '$meteo
       filename: null
     };
     var thumbopts         = {
-      store: 'media',
+      store: 'thumbs',
       auth: null,
       download: false,
       metadata: false,
