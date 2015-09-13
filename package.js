@@ -66,30 +66,30 @@ Package.onUse(function(api) {
   ], 'server');
   //Templates
   api.addFiles(
-    [
-      //site
-      'client/templates/site.ng.html',
-      //generic
-      'public/css/adminstyle.css',
-      'client/templates/admin.ng.html',
-      'client/templates/admindashboard.ng.html',
-      //Users
-      'client/templates/adminallusers.ng.html',
-      'client/templates/adminedituser.ng.html',
-      'client/templates/adminnewuser.ng.html',
-      //Pages
-      'client/templates/addnewpage.ng.html',
-      'client/templates/viewallpages.ng.html',
-      'client/templates/admineditpage.ng.html',
-      //Media
-      'client/templates/adminaddnewmedia.ng.html',
-      'client/templates/adminviewallmedia.ng.html',
-      'client/templates/admineditmedia.ng.html',
-      //frontend
-      'client/templates/frontend/viewpages.ng.html',
-      'client/templates/frontend/viewpagesingle.ng.html',
+      [
+        //site
+        'client/templates/site.ng.html',
+        //generic
+        'public/css/adminstyle.css',
+        'client/templates/admin.ng.html',
+        'client/templates/admindashboard.ng.html',
+        //Users
+        'client/templates/adminallusers.ng.html',
+        'client/templates/adminedituser.ng.html',
+        'client/templates/adminnewuser.ng.html',
+        //Pages
+        'client/templates/addnewpage.ng.html',
+        'client/templates/viewallpages.ng.html',
+        'client/templates/admineditpage.ng.html',
+        //Media
+        'client/templates/adminaddnewmedia.ng.html',
+        'client/templates/adminviewallmedia.ng.html',
+        'client/templates/admineditmedia.ng.html',
+        //frontend
+        'client/templates/frontend/viewpages.ng.html',
+        'client/templates/frontend/viewpagesingle.ng.html',
 
-    ], 'client');
+      ], 'client');
   api.addFiles([
 
     'partials/admin.html',
@@ -139,12 +139,11 @@ Package.onUse(function(api) {
     'Pages',
     'Site',
     'FS',
-    'Images'
-    ],['client']);
-    //exports
-    api.export([
-      'Images'
-      ],['client', 'server']);
+  ],['client']);
+  //exports
+  api.export([
+    'Media'
+  ],['client', 'server']);
 });
 
 Package.onTest(function(api) {
