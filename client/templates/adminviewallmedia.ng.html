@@ -15,7 +15,7 @@
       <tbody>
         <tr ng-repeat="singlefile in mediascope track by $index">
           <td>[[singlefile._id]]</td>
-          <td><a href="[[singlefile.thismedia]]"><img src="[[singlefile.thismedia]]" /></a></td>
+          <td><a href="[[singlefile.original]]"><img src="[[singlefile.thumb]]" /></a></td>
           <td><a href="/admin/editmedia/[[singlefile._id]]">Edit</a></td>
         </tr>
       </tbody>

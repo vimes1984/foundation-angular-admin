@@ -4,7 +4,7 @@ angular.module('adminui').controller('AdminViewAllMediaCtrl', ['$scope', '$meteo
 
     angular.forEach($scope.mediascope, function (value, key) {
     var thisfile        = Media.findOne({_id: value.media});
-    var options         = {
+    var originalopts         = {
       store: 'thumbs',
       auth: null,
       download: false,
@@ -13,8 +13,19 @@ angular.module('adminui').controller('AdminViewAllMediaCtrl', ['$scope', '$meteo
       uploading: null, // return this URL while uploading
       storing: null, // return this URL while storing
       filename: null
-    }
-    value.thismedia     = thisfile.url(options);
+    };
+    var thumbopts         = {
+      store: 'media',
+      auth: null,
+      download: false,
+      metadata: false,
+      brokenIsFine: false,
+      uploading: null, // return this URL while uploading
+      storing: null, // return this URL while storing
+      filename: null
+    };
+    value.original     = thisfile.url(originalopts);
+    value.thumbnail     = thisfile.url(thumopts);
   });
     console.log($scope.mediascope);
 }]);
