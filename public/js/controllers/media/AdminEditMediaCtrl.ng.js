@@ -1,21 +1,22 @@
 //Help page controller
 angular.module('adminui').controller('AdminEditMediaCtrl', ['$scope', '$stateParams', '$window', function($scope, $stateParams, $window){
 
-      $scope.singlepage = Pages.find({_id: $stateParams.mediaID }).fetch();
+      $scope.singlepage = MediaCollection.find({_id: $stateParams.mediaID }).fetch();
+      console.log($scope.singlepage);
 
        Template.editmedia.helpers({
           updateMediasingle: function() {
-            return MediaCollection.findOne();
+            return MediaCollection.find({}).fetch()[0];;
           }
         });
 
         var hooksObject = {
             onSuccess: function(formType, result) {
-              $scope.singlefile = MediaCollection.findOne({_id: $stateParams.mediaID });
+              $scope.singlepage = MediaCollection.find({_id: $stateParams.mediaID }).fetch();
               $window.scrollTo(0, 0);
               $scope.showalert    = true;
               $scope.alertclass   = 'success';
-              $scope.message      = 'Media Saved';
+              $scope.message      = 'Page Saved';
               $scope.$apply();
             }
         };
