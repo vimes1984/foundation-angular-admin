@@ -1,11 +1,11 @@
 angular.module('adminui').controller('AdminAddNewMediaCtrl', ['$scope', '$meteor', '$state', function($scope, $meteor, $state){
 
-  //$scope.pages = $meteor.collection(Pages, false).subscribe('pages');
+  //$scope.pages = $meteor.collection(Media, false).subscribe('media');
   var hooksObject = {
       onSuccess: function(formType, result) {
         $state.go('admin.dashboard');
       }
   };
-  AutoForm.addHooks('insertPageForm', hooksObject, true);
+  AutoForm.addHooks('insertMediaForm', hooksObject, true);
 
 }]);
