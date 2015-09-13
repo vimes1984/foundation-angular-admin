@@ -19,9 +19,7 @@ Meteor.publish('site', function (){
 
 Meteor.publish('logo', function (){
     var imageid = Site.find({}).fetch()[0];
-    var logo = Images.find({_id: imageid.sitelogo}).fetch()[0];
-
-    console.log(logo.copies.images.name);
+    var logo = Media.find({_id: imageid.sitelogo}).fetch()[0];
 
     return logo;
 });
@@ -54,7 +52,7 @@ Meteor.publish('roles', function (){
 
 /******* FS files **********/
 
-Images.allow({
+Media.allow({
   insert: function () {
     return true;
   },
@@ -64,9 +62,9 @@ Images.allow({
   fetch: null
 });
 
-FS.HTTP.publish(Images, function () {
+FS.HTTP.publish(Media, function () {
   // `this` provides a context similar to Meteor.publish
-  return Images.find();
+  return Media.find();
 });
 
 /******* Methods **********/

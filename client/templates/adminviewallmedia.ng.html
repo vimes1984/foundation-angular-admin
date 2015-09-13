@@ -13,10 +13,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="singlepage in pages track by $index">
+        <tr ng-repeat="singlefile in media track by $index">
           <td>[[singlepage.title]]</td>
-          <td><a href="/pages/[[singlepage.pageurl]]">/pages/[[singlepage.pageurl]]</a></td>
-          <td><a href="/admin/editpage/[[singlepage._id]]">Edit</a></td>
+          <td><a href="/pages/[[singlefile.mediaurl]]">/pages/[[singlefile.mediaurl]]</a></td>
+          <td><a href="/admin/editmedia/[[singlefile._id]]">Edit</a></td>
         </tr>
       </tbody>
     </table>

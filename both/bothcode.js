@@ -169,7 +169,7 @@ Schemas.Site = new SimpleSchema({
         autoform: {
             afFieldInput: {
                 type: "fileUpload",
-                collection: "images"
+                collection: "media"
             }
         }
     },
@@ -199,12 +199,12 @@ Site.attachSchema(Schemas.Site);
 
 
 /**
- * Images
+ * Media
 **/
 
-Images = new FS.Collection("images", {
+Media = new FS.Collection("media", {
   stores: [
-    new FS.Store.FileSystem("images"),
+    new FS.Store.FileSystem("media"),
   ],
   filter: {
     allow: {

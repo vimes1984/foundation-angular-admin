@@ -13,7 +13,6 @@ function(){
 Template.registerHelper('logo',
 function(){
   var imageid = Site.find({}).fetch()[0];
-  var logo = Images.find({_id: imageid.sitelogo}).fetch()[0];
-  console.log(logo);
+  var logo = Media.find({_id: imageid.sitelogo}).fetch()[0];
   return FS.HTTP.uploadUrl+"/"+logo.collectionName+"/"+imageid.sitelogo;
 });
