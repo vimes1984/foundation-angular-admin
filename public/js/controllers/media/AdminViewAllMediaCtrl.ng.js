@@ -1,6 +1,6 @@
 angular.module('adminui').controller('AdminViewAllMediaCtrl', ['$scope', '$meteor', '$state', function ($scope, $meteor, $state) {
 
-    $scope.mediascope = MediaCollection.find({}).fetch();
+  $scope.mediascope = $meteor.collection(MediaCollection);
 
     angular.forEach($scope.mediascope, function (value, key) {
     var thisfile        = Media.findOne({_id: value.media});
