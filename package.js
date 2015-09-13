@@ -91,8 +91,9 @@ Package.onUse(function(api) {
         'client/templates/frontend/viewpagesingle.ng.html',
 
       ], 'client');
+  // Partials
   api.addFiles([
-
+    'partials/editmedia.html',
     'partials/admin.html',
     'partials/adminmenumain.html',
     'partials/admindashboard.html',

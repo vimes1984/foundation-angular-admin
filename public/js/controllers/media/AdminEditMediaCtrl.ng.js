@@ -1,17 +1,17 @@
 //Help page controller
 angular.module('adminui').controller('AdminEditMediaCtrl', ['$scope', '$stateParams', '$window', function($scope, $stateParams, $window){
 
-      $scope.singlepage = Pages.find({_id: $stateParams.pageID }).fetch();
+      $scope.singlepage = Pages.find({_id: $stateParams.mediaID }).fetch();
 
        Template.editpage.helpers({
-          updatePagesingle: function() {
-            return Pages.find({}).fetch()[0];
+          updateMediasingle: function() {
+            return MediaCollection.findOne();
           }
         });
 
         var hooksObject = {
             onSuccess: function(formType, result) {
-              $scope.singlepage = Pages.find({_id: $stateParams.pageID }).fetch();
+              $scope.singlepage = Pages.findOne({_id: $stateParams.mediaID });
               $window.scrollTo(0, 0);
               $scope.showalert    = true;
               $scope.alertclass   = 'success';
@@ -19,5 +19,5 @@ angular.module('adminui').controller('AdminEditMediaCtrl', ['$scope', '$statePar
               $scope.$apply();
             }
         };
-        AutoForm.addHooks('updatePageForm', hooksObject, true);
+        AutoForm.addHooks('updateMediaorm', hooksObject, true);
 }]);
