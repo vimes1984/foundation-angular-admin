@@ -143,7 +143,8 @@ Package.onUse(function(api) {
   ],['client']);
   //exports
   api.export([
-    'Media'
+    'Media',
+    'MediaCollection'
   ],['client', 'server']);
 });
 

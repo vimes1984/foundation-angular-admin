@@ -213,7 +213,9 @@ Media = new FS.Collection("media", {
   }
 });
 
-Schemas.Media = new SimpleSchema({
+MediaCollection = new Mongo.Collection("mediacollection");
+
+Schemas.MediaCollection = new SimpleSchema({
     media: {
         type: String,
         optional: true,
@@ -227,4 +229,4 @@ Schemas.Media = new SimpleSchema({
 });
 
 // Attach the Site schemas to Site
-Media.attachSchema(Schemas.Media);
+MediaCollection.attachSchema(Schemas.MediaCollection);
