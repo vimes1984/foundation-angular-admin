@@ -7,7 +7,7 @@ angular.module('adminui').controller('AdminEditMediaCtrl', ['$scope', '$statePar
        Template.editmedia.helpers({
           updateMediasingle: function() {
             console.log( MediaCollection.find({_id: $stateParams.mediaID}).fetch()[0] );
-            return MediaCollection.find({_id: $stateParams.mediaID}).fetch()[0];
+            return MediaCollection.findOne({_id: $stateParams.mediaID});
           }
         });
 
