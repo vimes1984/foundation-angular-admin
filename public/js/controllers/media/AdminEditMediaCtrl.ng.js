@@ -1,12 +1,13 @@
 //media controller
 angular.module('adminui').controller('AdminEditMediaCtrl', ['$scope', '$stateParams', '$window', function($scope, $stateParams, $window){
 
-      $scope.singlepage = MediaCollection.find({_id: $stateParams.mediaID }).fetch();
-      console.log($scope.singlepage);
+      $scope.singlemedia = MediaCollection.find({_id: $stateParams.mediaID }).fetch();
+      console.log($scope.singlemedia);
 
        Template.editmedia.helpers({
           updateMediasingle: function() {
-            return MediaCollection.find({}).fetch()[0];;
+            console.log( MediaCollection.find({_id: $stateParams.mediaID}).fetch()[0] );
+            return MediaCollection.find({_id: $stateParams.mediaID}).fetch()[0];
           }
         });
 
